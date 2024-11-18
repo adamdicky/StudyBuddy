@@ -11,6 +11,14 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HomeController {
 
+	// Mapping for teacherdashboard
+	@RequestMapping("/teacherdashboard")
+	public ModelAndView teacherdashboard() { //being a model to teacherdashboard 
+	ModelAndView mav = new ModelAndView("teacherdashboard"); //using prebuild model of ModelAndView, redirecting to teacherdashboard.jsp
+	mav.addObject("message", "Learn more about us on this page.");
+	return mav;
+	}
+
 	// Mapping for About Page
 	@RequestMapping("/about")
 	public ModelAndView about() {
