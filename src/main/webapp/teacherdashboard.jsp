@@ -95,24 +95,28 @@
 	            grid-template-rows: repeat();
 	            background-color: #e0e0e0;
                 margin: 0px 0px 0px 0px;
-                padding: 0px 0px 0px 0px;
+                padding: 20px;
 
                 border-radius: 10px;
             }
 
-            .homeworklist {
-                width: 100%;
-                align-content: center;
-            }
-
-            .homeworklist > li {
-                list-style-type: none;
-                margin-top: 0px;
+            .homework {
+                grid-column-start: 1;
+                grid-column-end: 11;
+                padding: 3px 3px;
                 background-color: white;
-                padding: 5px;
 
                 border-radius: 10px;
+                
             }
+
+            .homework > a {
+                font-family: Arial, Helvetica, sans-serif;
+                padding: 0px 0px 0px 3px;
+                color: #4e60ff;
+            }
+
+
         </style>
         <title>Teacher Dashboard</title>
     </head>
@@ -123,7 +127,7 @@
             </div>
 
             <div class="content2">
-                <a>Welcome back, Cikgu --name--</a>
+                <a>Welcome back, Cikgu Afiq</a>
             </div>
 
             <div class="content3">
@@ -138,11 +142,14 @@
 
             <div class="greybox">
 				
-                <ul class="homeworklist">
-                    <li>Homework 1</li>
-                    <br>
-                    <li>Homework 2</li>
-                </ul>
+                <div class="homework h1">
+                    <a>TEXTBOOK PAGE 94-96</a>
+                    <a>ADDITIONAL MATHEMATICS</a>
+                    <a>5 AMANAH</a>
+                    <a>pic1</a>
+                    <a>pic2</a>
+                    <a>PIC SUBMISSION</a>
+                </div>
 
             </div>
         </div>
