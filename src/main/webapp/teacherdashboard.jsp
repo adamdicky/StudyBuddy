@@ -93,9 +93,23 @@
                 display: grid;
 	            grid-template-columns: repeat(10, 1fr);
 	            grid-template-rows: repeat();
-	            background-color: grey;
+	            background-color: #e0e0e0;
                 margin: 0px 0px 0px 0px;
-                padding: 0px;
+                padding: 0px 0px 0px 0px;
+
+                border-radius: 10px;
+            }
+
+            .homeworklist {
+                width: 100%;
+                align-content: center;
+            }
+
+            .homeworklist > li {
+                list-style-type: none;
+                margin-top: 0px;
+                background-color: white;
+                padding: 5px;
 
                 border-radius: 10px;
             }
@@ -121,8 +135,15 @@
             <h1>
                 HOMEWORKS <img src="./green-plus-11975.png" style="display:inline-block; height:1em;">
             </h1>
+
             <div class="greybox">
-				<a>a</a>
+				
+                <ul class="homeworklist">
+                    <li>Homework 1</li>
+                    <br>
+                    <li>Homework 2</li>
+                </ul>
+
             </div>
         </div>
     </body>
