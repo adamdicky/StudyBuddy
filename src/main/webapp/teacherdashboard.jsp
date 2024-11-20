@@ -65,10 +65,11 @@
             }
 
             .bodycontent {
+                display: grid;
                 grid-column-start: 2;
                 grid-column-end: 10;
-                grid-row-start: 2;
-                grid-row-end: 10;
+                grid-row-start: 3;
+                grid-row-end: 11;
                 background-color: white;
                 padding: 30px;
                 margin: 20px;
