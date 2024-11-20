@@ -70,7 +70,7 @@
                 grid-row-start: 2;
                 grid-row-end: 10;
                 background-color: white;
-                padding: 20px;
+                padding: 30px;
                 margin: 20px;
 
                 border-radius: 10px;
@@ -91,29 +91,110 @@
 
             .greybox {
                 display: grid;
-	            grid-template-columns: repeat(10, 1fr);
+	            grid-template-columns: repeat(6, 1fr);
 	            grid-template-rows: repeat();
 	            background-color: #e0e0e0;
                 margin: 0px 0px 0px 0px;
                 padding: 20px;
-
+                
                 border-radius: 10px;
             }
 
             .homework {
+                display: grid;
                 grid-column-start: 1;
-                grid-column-end: 11;
-                padding: 3px 3px;
+                grid-column-end: 7;
+                padding: 5px;
                 background-color: white;
 
                 border-radius: 10px;
-                
             }
 
-            .homework > a {
+            .details {
+                display: grid;
+                grid-column-start: 1;
+                grid-column-end: 2;
                 font-family: Arial, Helvetica, sans-serif;
                 padding: 0px 0px 0px 3px;
                 color: #4e60ff;
+
+                text-align: center;
+                align-content: center;
+            }
+
+            .subjname {
+                display: grid;
+                grid-column-start: 2;
+                grid-column-end: 3;
+                font-family: Arial, Helvetica, sans-serif;
+
+                 
+                align-content: center;
+            }
+
+            .className {
+                grid-column-start: 3;
+                grid-column-end: 4;
+                font-family: Arial, Helvetica, sans-serif;
+
+                text-align: center;
+                align-content: center;
+            }
+
+            .remove {
+                grid-column-start: 4;
+                grid-column-end: 5;
+                align-content: center;
+                text-align: center;
+
+                background: none;
+                color: inherit;
+                border: none;
+                padding: 0;
+                font: inherit;
+                cursor: pointer;
+                outline: inherit;
+            }
+
+            .remove > img {
+
+            }
+
+            .edit {
+                grid-column-start: 5;
+                grid-column-end: 6;
+                text-align: center;
+                align-content: center;
+
+                background: none;
+                color: inherit;
+                border: none;
+                padding: 0;
+                font: inherit;
+                cursor: pointer;
+                outline: inherit;
+            }
+
+            .edit > img {
+             
+            }
+            
+            .viewSub {
+                grid-column-start: 6;
+                grid-column-end: 7;
+                font-family: Arial, Helvetica, sans-serif;
+                align-content: center; 
+
+                background: none;
+                color: inherit;
+                border: none;
+                cursor: pointer;
+                outline: inherit;
+            }
+
+            .viewSub > a {
+                color: #4e60ff;
+                
             }
 
 
@@ -127,7 +208,7 @@
             </div>
 
             <div class="content2">
-                <a>Welcome back, Cikgu Afiq</a>
+                <a>Welcome back, <b>Cikgu Afiq</b></a>
             </div>
 
             <div class="content3">
@@ -143,12 +224,18 @@
             <div class="greybox">
 				
                 <div class="homework h1">
-                    <a>TEXTBOOK PAGE 94-96</a>
-                    <a>ADDITIONAL MATHEMATICS</a>
-                    <a>5 AMANAH</a>
-                    <a>pic1</a>
-                    <a>pic2</a>
-                    <a>PIC SUBMISSION</a>
+                    <a class="details"><b>TEXTBOOK PAGE 94-96</b></a>
+                    <a class="subjname"><b>ADDITIONAL MATHEMATICS</b></a>
+                    <a class="className"><b>5 AMANAH</b></a>
+                    <button  class="remove" type="submit">
+                        <img src="./minus-button.png" style="display:inline-block; height:2.5em; vertical-align: middle; ">
+                    </button>
+                    <button class="edit" type="submit">
+                        <img src="./edit-button.png" style="display:inline-block; height:2.5em; vertical-align: middle;">
+                    </button>
+                    <button class="viewSub" type="submit" style="display:inline-block;">
+                        <a><b>VIEW SUBMISSION</b></a>
+                    </button>
                 </div>
 
             </div>
