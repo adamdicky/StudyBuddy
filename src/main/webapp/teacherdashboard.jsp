@@ -65,11 +65,10 @@
             }
 
             .bodycontent {
-                display: grid;
                 grid-column-start: 2;
                 grid-column-end: 10;
-                grid-row-start: 3;
-                grid-row-end: 11;
+                grid-row-start: 2;
+                grid-row-end: 10;
                 background-color: white;
                 padding: 30px;
                 margin: 20px;
@@ -209,7 +208,7 @@
             </div>
 
             <div class="content2">
-                <a>Welcome back, <b>Cikgu Afiq</b></a>
+                <a>Welcome back, <b></b></a>
             </div>
 
             <div class="content3">
@@ -226,8 +225,42 @@
 				
                 <div class="homework h1">
                     <a class="details"><b>TEXTBOOK PAGE 94-96</b></a>
-                    <a class="subjname"><b>ADDITIONAL MATHEMATICS</b></a>
+                    <a class="subjname"><b>SCIENCE</b></a>
                     <a class="className"><b>5 AMANAH</b></a>
+                    <button  class="remove" type="submit">
+                        <img src="./minus-button.png" style="display:inline-block; height:2.5em; vertical-align: middle; ">
+                    </button>
+                    <button class="edit" type="submit">
+                        <img src="./edit-button.png" style="display:inline-block; height:2.5em; vertical-align: middle;">
+                    </button>
+                    <button class="viewSub" type="submit" style="display:inline-block;">
+                        <a><b>VIEW SUBMISSION</b></a>
+                    </button>
+                </div>
+
+                <a>a</a>
+                
+                <div class="homework h1">
+                    <a class="details"><b>TEXTBOOK PAGE 95-98</b></a>
+                    <a class="subjname"><b>MATHS</b></a>
+                    <a class="className"><b>5 BIJAK</b></a>
+                    <button  class="remove" type="submit">
+                        <img src="./minus-button.png" style="display:inline-block; height:2.5em; vertical-align: middle; ">
+                    </button>
+                    <button class="edit" type="submit">
+                        <img src="./edit-button.png" style="display:inline-block; height:2.5em; vertical-align: middle;">
+                    </button>
+                    <button class="viewSub" type="submit" style="display:inline-block;">
+                        <a><b>VIEW SUBMISSION</b></a>
+                    </button>
+                </div>
+
+                <a>a</a>
+                
+                <div class="homework h1">
+                    <a class="details"><b>TEXTBOOK PAGE 23-25</b></a>
+                    <a class="subjname"><b>SEJARAH RIZZ</b></a>
+                    <a class="className"><b>5 MUNAWAR</b></a>
                     <button  class="remove" type="submit">
                         <img src="./minus-button.png" style="display:inline-block; height:2.5em; vertical-align: middle; ">
                     </button>
