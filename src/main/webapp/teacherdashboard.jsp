@@ -64,19 +64,19 @@
                 color: white;
             }
 
+            /* navbar styling ends here */
+          
+            
             .bodycontent {
-                grid-column-start: 2;
-                grid-column-end: 10;
-                grid-row-start: 2;
-                grid-row-end: 10;
-                background-color: white;
-                padding: 30px;
-                margin: 20px;
-
+                max-width: 1200px;
+                margin: 2rem auto;
+                padding: 2rem;
+                background: red;
                 border-radius: 10px;
-                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             }
 
+            
             .bodycontent > h1 {
                 font-family: Arial, Helvetica, sans-serif;
 
@@ -85,14 +85,28 @@
                 margin: auto;
             }
 
-            .bodycontent > h1 > img {
-                align-content: center;
+            .homework-title {
+                display: flex;
+                align-items: center;
+                margin-bottom: 1.5rem;
+                font-weight: bold;
             }
 
+            .plus-icon {
+                background-color: #4cd137;
+                color: white;
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                margin-left: 0.5rem;
+                font-size: 1.2rem;
+                cursor: pointer;
+            }
+            
             .greybox {
-                display: grid;
-	            grid-template-columns: repeat(6, 1fr);
-	            grid-template-rows: repeat();
 	            background-color: #e0e0e0;
                 margin: 0px 0px 0px 0px;
                 padding: 20px;
@@ -100,101 +114,49 @@
                 border-radius: 10px;
             }
 
-            .homework {
+            .homework-item {
+                background-color: #f8f9fa;
+                padding: 1rem;
+                border-radius: 5px;
+                margin-bottom: 1rem;
                 display: grid;
-                grid-column-start: 1;
-                grid-column-end: 7;
-                padding: 5px;
-                background-color: white;
-
-                border-radius: 10px;
+                grid-template-columns: 2fr 1fr 1fr 3fr;
+                align-items: center;
+                gap: 1rem;
             }
 
-            .details {
-                display: grid;
-                grid-column-start: 1;
-                grid-column-end: 2;
-                font-family: Arial, Helvetica, sans-serif;
-                padding: 0px 0px 0px 3px;
-                color: #4e60ff;
-
-                text-align: center;
-                align-content: center;
+            .homework-action {
+                display: flex;
+                gap: 0.5rem;
+                justify-content: flex-end;
             }
 
-            .subjname {
-                display: grid;
-                grid-column-start: 2;
-                grid-column-end: 3;
-                font-family: Arial, Helvetica, sans-serif;
-
-                 
-                align-content: center;
-            }
-
-            .className {
-                grid-column-start: 3;
-                grid-column-end: 4;
-                font-family: Arial, Helvetica, sans-serif;
-
-                text-align: center;
-                align-content: center;
-            }
-
-            .remove {
-                grid-column-start: 4;
-                grid-column-end: 5;
-                align-content: center;
-                text-align: center;
-
-                background: none;
-                color: inherit;
+            .delete-btn {
+                background-color: #ff4757;
+                color: white;
                 border: none;
-                padding: 0;
-                font: inherit;
+                border-radius: 50%;
+                width: 24px;
+                height: 24px;
                 cursor: pointer;
-                outline: inherit;
             }
 
-            .remove > img {
-
-            }
-
-            .edit {
-                grid-column-start: 5;
-                grid-column-end: 6;
-                text-align: center;
-                align-content: center;
-
-                background: none;
-                color: inherit;
+            .edit-btn {
+                background-color: #4B5EE4;
+                color: white;
                 border: none;
-                padding: 0;
-                font: inherit;
+                border-radius: 5px;
+                padding: 0.5rem 1rem;
                 cursor: pointer;
-                outline: inherit;
             }
 
-            .edit > img {
-             
-            }
-            
-            .viewSub {
-                grid-column-start: 6;
-                grid-column-end: 7;
-                font-family: Arial, Helvetica, sans-serif;
-                align-content: center; 
-
-                background: none;
-                color: inherit;
+            .view-btn {
+                background-color: #4B5EE4;
+                color: white;
                 border: none;
+                border-radius: 5px;
+                padding: 0.5rem 1rem;
                 cursor: pointer;
-                outline: inherit;
-            }
-
-            .viewSub > a {
-                color: #4e60ff;
-                
             }
 
 
@@ -202,76 +164,42 @@
         <title>Teacher Dashboard</title>
     </head>
     <body>
-        <div class="navbar">
-            <div class="content1">
-                <a><b>STUDYBUDDY</b></a>
-            </div>
-
-            <div class="content2">
-                <a>Welcome back, <b></b></a>
-            </div>
-
-            <div class="content3">
-                <a><b>LOGOUT</b></a>
-            </div>
-        </div>
-
-        <div class="bodycontent">
-            <h1>
-                HOMEWORKS <img src="./green-plus-11975.png" style="display:inline-block; height:1em;">
-            </h1>
-
-            <div class="greybox">
-				
-                <div class="homework h1">
-                    <a class="details"><b>TEXTBOOK PAGE 94-96</b></a>
-                    <a class="subjname"><b>SCIENCE</b></a>
-                    <a class="className"><b>5 AMANAH</b></a>
-                    <button  class="remove" type="submit">
-                        <img src="./minus-button.png" style="display:inline-block; height:2.5em; vertical-align: middle; ">
-                    </button>
-                    <button class="edit" type="submit">
-                        <img src="./edit-button.png" style="display:inline-block; height:2.5em; vertical-align: middle;">
-                    </button>
-                    <button class="viewSub" type="submit" style="display:inline-block;">
-                        <a><b>VIEW SUBMISSION</b></a>
-                    </button>
+        <header>
+            <div class="navbar">
+                <div class="content1">
+                    <a><b>STUDYBUDDY</b></a>
                 </div>
-
-                <a>a</a>
+    
+                <div class="content2">
+                    <a>Welcome back, Cikgu Afiq<b></b></a>
+                </div>
+    
+                <div class="content3">
+                    <a><b>LOGOUT</b></a>
+                </div>
+            </div>
+        </header>
+        
+        <div class="homework-container">
+            <div class="bodycontent">
+                <h1 class="homework-title">
+                    HOMEWORKS 
+                    <span class="plus-icon">+</span>
+                </h1>
                 
-                <div class="homework h1">
-                    <a class="details"><b>TEXTBOOK PAGE 95-98</b></a>
-                    <a class="subjname"><b>MATHS</b></a>
-                    <a class="className"><b>5 BIJAK</b></a>
-                    <button  class="remove" type="submit">
-                        <img src="./minus-button.png" style="display:inline-block; height:2.5em; vertical-align: middle; ">
-                    </button>
-                    <button class="edit" type="submit">
-                        <img src="./edit-button.png" style="display:inline-block; height:2.5em; vertical-align: middle;">
-                    </button>
-                    <button class="viewSub" type="submit" style="display:inline-block;">
-                        <a><b>VIEW SUBMISSION</b></a>
-                    </button>
-                </div>
-
-                <a>a</a>
+                <div class="greybox">
+                    <div class="homework-item">
+                        <div class="homework-detail"><a>ACTIVITY BOOK PAGE 12 - 14</a></div>
+                        <div class="homework-subject"><a>ADDITIONAL MATHETMATICS</a></div>
+                        <div class="homework-class"><a>5 SKIBIDI</a></div>
+                        <div class="homework-action">
+                            <button class="delete-btn"><b>-</b></button>
+                            <button class="edit-btn">/</button>
+                            <button class="view-btn">VIEW SUBMISSION</button>
+                        </div>
+                    </div>
                 
-                <div class="homework h1">
-                    <a class="details"><b>TEXTBOOK PAGE 23-25</b></a>
-                    <a class="subjname"><b>SEJARAH RIZZ</b></a>
-                    <a class="className"><b>5 MUNAWAR</b></a>
-                    <button  class="remove" type="submit">
-                        <img src="./minus-button.png" style="display:inline-block; height:2.5em; vertical-align: middle; ">
-                    </button>
-                    <button class="edit" type="submit">
-                        <img src="./edit-button.png" style="display:inline-block; height:2.5em; vertical-align: middle;">
-                    </button>
-                    <button class="viewSub" type="submit" style="display:inline-block;">
-                        <a><b>VIEW SUBMISSION</b></a>
-                    </button>
                 </div>
-
             </div>
         </div>
     </body>
