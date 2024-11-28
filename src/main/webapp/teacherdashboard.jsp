@@ -198,6 +198,17 @@
                             <button class="view-btn">VIEW SUBMISSION</button>
                         </div>
                     </div>
+
+                    <div class="homework-item">
+                        <div class="homework-detail"><a>ACTIVITY BOOK PAGE 12 - 14</a></div>
+                        <div class="homework-subject"><a>ADDITIONAL MATHETMATICS</a></div>
+                        <div class="homework-class"><a>5 SKIBIDI</a></div>
+                        <div class="homework-action">
+                            <button class="delete-btn"><b>-</b></button>
+                            <button class="edit-btn">/</button>
+                            <button class="view-btn">VIEW SUBMISSION</button>
+                        </div>
+                    </div>
                 
                 </div>
             </div>
