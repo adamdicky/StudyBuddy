@@ -71,7 +71,7 @@
                 max-width: 1200px;
                 margin: 2rem auto;
                 padding: 2rem;
-                background: red;
+                background: rgb(232, 232, 232);
                 border-radius: 10px;
                 box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             }
@@ -117,10 +117,10 @@
             .homework-item {
                 background-color: #f8f9fa;
                 padding: 1rem;
-                border-radius: 5px;
+                border-radius: 60px;
                 margin-bottom: 1rem;
                 display: grid;
-                grid-template-columns: 2fr 1fr 1fr 3fr;
+                grid-template-columns: 2fr 1fr 1fr 2fr;
                 align-items: center;
                 gap: 1rem;
             }
@@ -139,22 +139,25 @@
                 width: 24px;
                 height: 24px;
                 cursor: pointer;
+                text-align: center;
             }
 
             .edit-btn {
                 background-color: #4B5EE4;
                 color: white;
                 border: none;
-                border-radius: 5px;
-                padding: 0.5rem 1rem;
+                border-radius: 50%;
+                width: 24px;
+                height: 24px;
                 cursor: pointer;
+                text-align: center;
             }
 
             .view-btn {
                 background-color: #4B5EE4;
                 color: white;
                 border: none;
-                border-radius: 5px;
+                border-radius: 15px;
                 padding: 0.5rem 1rem;
                 cursor: pointer;
             }
@@ -167,7 +170,7 @@
         <header>
             <div class="navbar">
                 <div class="content1">
-                    <a><b>STUDYBUDDY</b></a>
+                    <a href="teacherdashboardnew.html"><b>STUDYBUDDY</b></a>
                 </div>
     
                 <div class="content2">
@@ -209,7 +212,7 @@
                             <button class="view-btn">VIEW SUBMISSION</button>
                         </div>
                     </div>
-
+                    
                     <div class="homework-item">
                         <div class="homework-detail"><a>ACTIVITY BOOK PAGE 12 - 14</a></div>
                         <div class="homework-subject"><a>ADDITIONAL MATHETMATICS</a></div>
