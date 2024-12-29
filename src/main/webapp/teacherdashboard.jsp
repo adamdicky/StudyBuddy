@@ -71,9 +71,9 @@
                 max-width: 1200px;
                 margin: 2rem auto;
                 padding: 2rem;
-                background: rgb(232, 232, 232);
+                background: rgb(255, 255, 255);
                 border-radius: 10px;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             }
 
             
@@ -123,6 +123,10 @@
                 grid-template-columns: 2fr 1fr 1fr 2fr;
                 align-items: center;
                 gap: 1rem;
+            }
+
+            .homework-detail {
+                color: rgb(51, 132, 252);
             }
 
             .homework-action {

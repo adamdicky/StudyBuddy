@@ -93,11 +93,40 @@
             }
             
             .greybox {
-	            background-color: #e0e0e0;
+	            background-color: #ffffff;
                 margin: 0px 0px 0px 0px;
-                padding: 20px;
-                
+                padding: 10px;
                 border-radius: 10px;
+            }
+
+            .addhomework-form {
+                display: grid;
+                padding: 5px;
+            }
+
+            .textbox {
+                color: rgb(0, 0, 0);
+                padding: 10px 10px;
+                width: 40vh;
+                height: 6rem;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-sizing: border-box;
+
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+
+            .homeworkadd {
+                background-color: #ffffff;
+                
+                margin: auto;
+                padding: 10px;
+                text-align: center;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(auto);
+                row-gap: 20px;
             }
 
         </style>
@@ -127,22 +156,47 @@
                 </h1>
                 
                 <div class="greybox">
-                    <form>
-                        <label for="fname">Homework Name:</label>
-                        <input type="text" id="fname" name="fname">
+                    <div class="homeworkadd">
+                        <div class="hw">
+                            <label for="hw">Homework Name:</label><br>
+                            <input class="textbox" type="text" id="hw" name="hw">
+                        </div>
+                        <div class="dl">   
+                            <label for="dl">Deadline:</label><br>
+                            <input class="textbox" type="text" id="dl" name="dl">
+                        </div>
+
+                        <div class="dt">
+                            <label for="dt">Details:</label><br>
+                            <input class="textbox" type="text" id="dt" name="dt">
+                        </div>
+
+                        <div class="cl">
+                            <label for="cl">Class:</label><br>
+                            <input class="textbox" type="text" id="cl" name="cl">
+                        </div>
+                    </div>
+                    
+                    <!-- <form class="addhomework-form">
+                        <label for="hw">Homework Name:</label><br>
+                        <input class="textbox" type="text" id="hw" name="hw">
                         <br>
-                        <label for="lname">Deadline:</label>
-                        <input type="text" id="lname" name="lname">
                         <br>
-                        <label for="lname">Details:</label>
-                        <input type="text" id="lname" name="lname">
+
+                        <label for="dl">Deadline:</label><br>
+                        <input class="textbox" type="text" id="dl" name="dl">
                         <br>
-                        <label for="lname">Class:</label>
-                        <input type="text" id="lname" name="lname">
                         <br>
-                        <label for="lname">Class:</label>
-                        <input type="text" id="lname" name="lname">
-                      </form>
+
+                        <label for="dt">Details:</label><br>
+                        <input class="textbox" type="text" id="dt" name="dt">
+                        <br>
+                        <br>
+                        <label for="cl">Class:</label><br>
+                        <input class="textbox" type="text" id="cl" name="cl">
+                        <br>
+                      </form> -->
+                    
                 </div>
             </div>
         </div>
