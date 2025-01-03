@@ -129,6 +129,18 @@
                 row-gap: 20px;
             }
 
+            .confirm-btn {
+                background-color: #4361ee;  /* Bright blue color */
+                color: white;
+                padding: 12px 24px;
+                border: none;
+                border-radius: 8px;
+                font-size: 16px;
+                font-weight: 500;
+                text-transform: uppercase;
+                cursor: pointer;
+            }
+
         </style>
         <title>Teacher Dashboard</title>
     </head>
@@ -176,7 +188,6 @@
                             <input class="textbox" type="text" id="cl" name="cl">
                         </div>
                     </div>
-                    
                     <!-- <form class="addhomework-form">
                         <label for="hw">Homework Name:</label><br>
                         <input class="textbox" type="text" id="hw" name="hw">
@@ -196,7 +207,12 @@
                         <input class="textbox" type="text" id="cl" name="cl">
                         <br>
                       </form> -->
-                    
+                </div>
+
+                <div class="confirmbutton">
+                    <center>
+                        <button class="confirm-btn">CONFIRM</button>
+                    </center>
                 </div>
             </div>
         </div>
