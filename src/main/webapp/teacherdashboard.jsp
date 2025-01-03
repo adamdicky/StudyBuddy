@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head>
+        <link href='https://fonts.googleapis.com/css?family=Anek Bangla' rel='stylesheet'>
         <style>
         	body {
         		margin: 0;
@@ -22,6 +23,7 @@
         	}
 
 	        .content1 {
+                font-family: 'Anek Bangla';
 	            grid-column-start: 1;
 	            grid-column-end: 2;
 	            
@@ -33,7 +35,7 @@
 	        }
 
             .content1 > a {
-                font-family: Arial, Helvetica, sans-serif;
+                text-decoration: none;
                 color: white;
             }
 	        
@@ -46,7 +48,7 @@
 	        }
 
             .content2 > a {
-                font-family: Arial, Helvetica, sans-serif;
+                font-family: 'Anek Bangla';
                 color: white;
             }
 	        
@@ -61,6 +63,7 @@
 	        }
 
             .content3 > a {
+                font-family: 'Anek Bangla';
                 color: white;
             }
 
@@ -78,7 +81,7 @@
 
             
             .bodycontent > h1 {
-                font-family: Arial, Helvetica, sans-serif;
+                font-family: 'Anek Bangla';
 
                 font-size: 30px;
                 padding: 0px 0px 20px 0px;
@@ -116,23 +119,29 @@
 
             .homework-item {
                 background-color: #f8f9fa;
-                padding: 1rem;
+                padding: 10px;
                 border-radius: 60px;
                 margin-bottom: 1rem;
                 display: grid;
-                grid-template-columns: 2fr 1fr 1fr 2fr;
+                grid-template-columns: 2fr 2fr 1fr 2fr;
                 align-items: center;
                 gap: 1rem;
             }
 
             .homework-detail {
                 color: rgb(51, 132, 252);
+                font-family: 'Anek Bangla';
+            }
+
+            .homework-subject, .homework-class, .view-btn {
+                font-family: 'Anek Bangla';
             }
 
             .homework-action {
                 display: flex;
                 gap: 0.5rem;
                 justify-content: flex-end;
+                align-items: center;
             }
 
             .delete-btn {

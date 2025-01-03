@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head>
+        <link href='https://fonts.googleapis.com/css?family=Anek Bangla' rel='stylesheet'>
         <style>
         	body {
         		margin: 0;
@@ -8,7 +9,7 @@
 
             
 	        html {
-	            background-color: rgb(232, 232, 232);
+	            background-color: #959595;
 	        }
 
             .navbar {
@@ -22,6 +23,7 @@
         	}
 
 	        .content1 {
+                font-family: 'Anek Bangla';
 	            grid-column-start: 1;
 	            grid-column-end: 2;
 	            
@@ -33,7 +35,7 @@
 	        }
 
             .content1 > a {
-                font-family: Arial, Helvetica, sans-serif;
+                text-decoration: none;
                 color: white;
             }
 	        
@@ -46,7 +48,7 @@
 	        }
 
             .content2 > a {
-                font-family: Arial, Helvetica, sans-serif;
+                font-family: 'Anek Bangla';
                 color: white;
             }
 	        
@@ -62,6 +64,8 @@
 
             .content3 > a {
                 color: white;
+                font-family: 'Anek Bangla';
+
             }
 
             /* navbar styling ends here */
@@ -78,10 +82,9 @@
 
             
             .bodycontent > h1 {
-                font-family: Arial, Helvetica, sans-serif;
-
+                font-family: 'Anek Bangla';
                 font-size: 30px;
-                padding: 0px 0px 20px 0px;
+                padding: 0px 0px 0px 0px;
                 margin: auto;
             }
 
@@ -129,16 +132,22 @@
                 row-gap: 20px;
             }
 
+            .hw, .dl, .dt, .cl {
+                font-family: 'Anek Bangla';
+            }
+
             .confirm-btn {
                 background-color: #4361ee;  /* Bright blue color */
                 color: white;
-                padding: 12px 24px;
+                padding: 10px 24px;
                 border: none;
                 border-radius: 8px;
                 font-size: 16px;
                 font-weight: 500;
                 text-transform: uppercase;
                 cursor: pointer;
+
+                font-family: 'Anek Bangla';
             }
 
         </style>
