@@ -108,6 +108,10 @@
                 font-size: 1.2rem;
                 cursor: pointer;
             }
+
+            .plus-icon > a {
+                text-decoration: none;
+            }
             
             .greybox {
 	            background-color: #e0e0e0;
@@ -200,7 +204,7 @@
             <div class="bodycontent">
                 <h1 class="homework-title">
                     HOMEWORKS 
-                    <span class="plus-icon">+</span>
+                    <span class="plus-icon"><a href="TeacherDashboardAddHomework.jsp">+</a></span>
                 </h1>
                 
                 <div class="greybox">
