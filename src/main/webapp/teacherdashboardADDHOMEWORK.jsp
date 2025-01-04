@@ -179,7 +179,7 @@
                 <div class="greybox">
                     <div class="homeworkadd">
                         <div class="hw">
-                            <label for="hw">Homework Name:</label><br>
+                            <label for="hw">Homework Subject:</label><br>
                             <input class="textbox" type="text" id="hw" name="hw">
                         </div>
                         <div class="dl">   

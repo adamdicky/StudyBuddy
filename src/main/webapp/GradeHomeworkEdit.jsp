@@ -174,70 +174,62 @@
                 padding: 0.5rem 1rem;
                 cursor: pointer;
             }
-        </style>
-        <title>Teacher Dashboard</title>
-    </head>
-    <body>
-        <header>
-            <div class="navbar">
-                <div class="content1">
-                    <a href="teacherdashboardnew.html"><b>STUDYBUDDY</b></a>
-                </div>
-    
-                <div class="content2">
-                    <a>Welcome back, Cikgu Afiq<b></b></a>
-                </div>
-    
-                <div class="content3">
-                    <a><b>LOGOUT</b></a>
-                </div>
-            </div>
-        </header>
-        
-        <!---->
+            
+            
+            <div class="header">
+    <h1>STUDYBUDDY</h1>
+    <a href="#" class="logout">LOGOUT</a>
+</div>
 
-        <div class="homework-container">
-            <div class="bodycontent">
-                <h1 class="homework-title">
-                    HOMEWORKS 
-                    <span class="plus-icon">+</span>
-                </h1>
-                
-                <div class="greybox">
-                    <div class="homework-item">
-                        <div class="homework-detail"><a>ACTIVITY BOOK PAGE 12 - 14</a></div>
-                        <div class="homework-subject"><a>ADDITIONAL MATHETMATICS</a></div>
-                        <div class="homework-class"><a>5 SKIBIDI</a></div>
-                        <div class="homework-action">
-                            <button class="delete-btn"><b>-</b></button>
-                            <button class="edit-btn">/</button>
-                            <button class="view-btn">VIEW SUBMISSION</button>
-                        </div>
-                    </div>
+<div class="container">
+    <div class="title">Activity Book Page 10 - 15 &middot; Additional Mathematics</div>
 
-                    <div class="homework-item">
-                        <div class="homework-detail"><a>ACTIVITY BOOK PAGE 12 - 14</a></div>
-                        <div class="homework-subject"><a>ADDITIONAL MATHEMATICS</a></div>
-                        <div class="homework-class"><a>5 SKIBIDI</a></div>
-                        <div class="homework-action">
-                            <button class="delete-btn"><b>-</b></button>
-                            <button class="edit-btn">/</button>
-                            <button class="view-btn">VIEW SUBMISSION</button>
-                        </div>
-                    </div>
-                    
-                    <div class="homework-item">
-                        <div class="homework-detail"><a>ACTIVITY BOOK PAGE 12 - 14</a></div>
-                        <div class="homework-subject"><a>ADDITIONAL MATHETMATICS</a></div>
-                        <div class="homework-class"><a>5 SKIBIDI</a></div>
-                        <div class="homework-action">
-                            <button class="delete-btn"><b>-</b></button>
-                            <button class="edit-btn">/</button>
-                            <button class="view-btn">VIEW SUBMISSION</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Class</th>
+                <th>Status</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Muhammad Ahmad</td>
+                <td>5 Amanah</td>
+                <td><span class="status-submitted">SUBMITTED</span></td>
+                <td>GRADED</td>
+            </tr>
+            <tr>
+                <td>Wan Arif</td>
+                <td>5 Amanah</td>
+                <td><span class="status-submitted">SUBMITTED</span></td>
+                <td>GRADED</td>
+            </tr>
+            <tr>
+                <td>Adam Safwan</td>
+                <td>5 Amanah</td>
+                <td><span class="status-submitted">SUBMITTED</span></td>
+                <td>GRADED</td>
+            </tr>
+            <tr>
+                <td>Muhammad Ali</td>
+                <td>5 Amanah</td>
+                <td><span class="status-not-submitted">NOT SUBMITTED</span></td>
+                <td>NOT GRADED</td>
+            </tr>
+            <tr>
+                <td>Wan Akif</td>
+                <td>5 Amanah</td>
+                <td><span class="status-not-submitted">NOT SUBMITTED</span></td>
+                <td>NOT GRADED</td>
+            </tr>
+            <tr>
+                <td>Wan Zafirzan</td>
+                <td>5 Amanah</td>
+                <td><span class="status-not-submitted">NOT SUBMITTED</span></td>
+                <td>NOT GRADED</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
