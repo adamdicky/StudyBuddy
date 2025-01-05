@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
 <html>
     <head>
         <link href='https://fonts.googleapis.com/css?family=Anek Bangla' rel='stylesheet'>
@@ -208,6 +209,22 @@
                 </h1>
                 
                 <div class="greybox">
+                <c:if test="${not empty homeworklist}">
+                	<c:forEach var="homeworkobject" items="${homeworklist}" varStatus="status">
+	                	<div class="homework-item">
+	                        <div class="homework-detail"><a><b>${homeworkobject.getDetails()}</b></a></div>
+	                        <div class="homework-subject"><a>${homeworkobject.getSubject()}</a></div>
+	                        <div class="homework-class"><a>${homeworkobject.getClassname()}</a></div>
+	                        <div class="homework-action">
+	                            <button class="delete-btn"><b>-</b></button>
+	                            <button class="edit-btn">/</button>
+	                            <button class="view-btn">VIEW SUBMISSION</button>
+	                        </div>
+	                    </div>
+	                </c:forEach>
+	             </c:if>
+	                
+                    <!-- 
                     <div class="homework-item">
                         <div class="homework-detail"><a><b>ACTIVITY BOOK PAGE 12 - 14</b></a></div>
                         <div class="homework-subject"><a>ADDITIONAL MATHETMATICS</a></div>
@@ -240,6 +257,8 @@
                             <button class="view-btn">VIEW SUBMISSION</button>
                         </div>
                     </div>
+       
+                    -->
                 </div>
             </div>
         </div>

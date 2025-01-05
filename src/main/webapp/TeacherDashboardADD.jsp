@@ -176,7 +176,7 @@
                     ADD HOMEWORK 
                 </h1>
                 
-                <form action="addhomework">
+                <form action="addhomework" method="get">
                 	<div class="greybox">
 	                    <div class="homeworkadd">
 	                        <div class="hw">
@@ -218,14 +218,18 @@
 	                        <br>
 	                      </form> -->
                		</div>
+               		
+               		<div class="confirmbutton">
+                    <center>
+                    	<INPUT class="confirm-btn "NAME="submit" TYPE="submit" VALUE="Submit">
+                        <!-- <button class="confirm-btn">CONFIRM</button> -->
+                    </center>
+               		</div>
+               		
                 </form>
              
 
-                <div class="confirmbutton">
-                    <center>
-                        <button class="confirm-btn">CONFIRM</button>
-                    </center>
-                </div>
+
             </div>
         </div>
     </body>
