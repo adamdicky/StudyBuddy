@@ -216,10 +216,12 @@
 	                        <div class="homework-subject"><a>${homeworkobject.getHomework()}</a></div>
 	                        <div class="homework-class"><a>${homeworkobject.getClassname()}</a></div>
 	                        <div class="homework-action">
-	                            <button class="delete-btn"><b>-</b></button>
+	                            <form><button class="delete-btn"><b>-</b></button></form>
 	                            <button class="edit-btn">/</button>
 	                            <button class="view-btn">VIEW SUBMISSION</button>
 	                        </div>
+	                        
+	                        
 	                    </div>
 	                </c:forEach>
 	             </c:if>
