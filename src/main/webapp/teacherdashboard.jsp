@@ -204,12 +204,12 @@
             <div class="bodycontent">
                 <h1 class="homework-title">
                     HOMEWORKS 
-                    <span class="plus-icon"><a href="TeacherDashboardAddHomework.jsp">+</a></span>
+                    <span class="plus-icon"><a href="TeacherDashboardADD.jsp">+</a></span>
                 </h1>
                 
                 <div class="greybox">
                     <div class="homework-item">
-                        <div class="homework-detail"><a>ACTIVITY BOOK PAGE 12 - 14</a></div>
+                        <div class="homework-detail"><a><b>ACTIVITY BOOK PAGE 12 - 14</b></a></div>
                         <div class="homework-subject"><a>ADDITIONAL MATHETMATICS</a></div>
                         <div class="homework-class"><a>5 SKIBIDI</a></div>
                         <div class="homework-action">
@@ -220,7 +220,7 @@
                     </div>
 
                     <div class="homework-item">
-                        <div class="homework-detail"><a>ACTIVITY BOOK PAGE 12 - 14</a></div>
+                        <div class="homework-detail"><a><b>ACTIVITY BOOK PAGE 12 - 14</b></a></div>
                         <div class="homework-subject"><a>ADDITIONAL MATHEMATICS</a></div>
                         <div class="homework-class"><a>5 SKIBIDI</a></div>
                         <div class="homework-action">
@@ -231,7 +231,7 @@
                     </div>
                     
                     <div class="homework-item">
-                        <div class="homework-detail"><a>ACTIVITY BOOK PAGE 12 - 14</a></div>
+                        <div class="homework-detail"><a><b>ACTIVITY BOOK PAGE 12 - 14</b></a></div>
                         <div class="homework-subject"><a>ADDITIONAL MATHETMATICS</a></div>
                         <div class="homework-class"><a>5 SKIBIDI</a></div>
                         <div class="homework-action">

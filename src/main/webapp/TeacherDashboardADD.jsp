@@ -176,47 +176,50 @@
                     ADD HOMEWORK 
                 </h1>
                 
-                <div class="greybox">
-                    <div class="homeworkadd">
-                        <div class="hw">
-                            <label for="hw">Homework Subject:</label><br>
-                            <input class="textbox" type="text" id="hw" name="hw">
-                        </div>
-                        <div class="dl">   
-                            <label for="dl">Deadline:</label><br>
-                            <input class="textbox" type="text" id="dl" name="dl">
-                        </div>
-
-                        <div class="dt">
-                            <label for="dt">Details:</label><br>
-                            <input class="textbox" type="text" id="dt" name="dt">
-                        </div>
-
-                        <div class="cl">
-                            <label for="cl">Class:</label><br>
-                            <input class="textbox" type="text" id="cl" name="cl">
-                        </div>
-                    </div>
-                    <!-- <form class="addhomework-form">
-                        <label for="hw">Homework Name:</label><br>
-                        <input class="textbox" type="text" id="hw" name="hw">
-                        <br>
-                        <br>
-
-                        <label for="dl">Deadline:</label><br>
-                        <input class="textbox" type="text" id="dl" name="dl">
-                        <br>
-                        <br>
-
-                        <label for="dt">Details:</label><br>
-                        <input class="textbox" type="text" id="dt" name="dt">
-                        <br>
-                        <br>
-                        <label for="cl">Class:</label><br>
-                        <input class="textbox" type="text" id="cl" name="cl">
-                        <br>
-                      </form> -->
-                </div>
+                <form action="addhomework">
+                	<div class="greybox">
+	                    <div class="homeworkadd">
+	                        <div class="hw">
+	                            <label for="hw">Homework Subject:</label><br>
+	                            <input class="textbox" type="text" id="hw" name="hw">
+	                        </div>
+	                        <div class="dl">   
+	                            <label for="dl">Deadline:</label><br>
+	                            <input class="textbox" type="text" id="dl" name="dl">
+	                        </div>
+	
+	                        <div class="dt">
+	                            <label for="dt">Details:</label><br>
+	                            <input class="textbox" type="text" id="dt" name="dt">
+	                        </div>
+	
+	                        <div class="cl">
+	                            <label for="cl">Class:</label><br>
+	                            <input class="textbox" type="text" id="cl" name="cl">
+	                        </div>
+	                    </div>
+	                    <!-- <form class="addhomework-form">
+	                        <label for="hw">Homework Name:</label><br>
+	                        <input class="textbox" type="text" id="hw" name="hw">
+	                        <br>
+	                        <br>
+	
+	                        <label for="dl">Deadline:</label><br>
+	                        <input class="textbox" type="text" id="dl" name="dl">
+	                        <br>
+	                        <br>
+	
+	                        <label for="dt">Details:</label><br>
+	                        <input class="textbox" type="text" id="dt" name="dt">
+	                        <br>
+	                        <br>
+	                        <label for="cl">Class:</label><br>
+	                        <input class="textbox" type="text" id="cl" name="cl">
+	                        <br>
+	                      </form> -->
+               		</div>
+                </form>
+             
 
                 <div class="confirmbutton">
                     <center>
