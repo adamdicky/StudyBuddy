@@ -17,5 +17,7 @@ public class TeacherDashboardController {
 			String cl = classname;
 			
 			HomeworkModel homeworkobject = new HomeworkModel(homework, deadline, details, classname);
+			
+			return "redirect:/"
 		}
 }
