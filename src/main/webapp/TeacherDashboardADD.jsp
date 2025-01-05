@@ -176,7 +176,7 @@
                     ADD HOMEWORK 
                 </h1>
                 
-                <form action="addhomework" method="get">
+                <form action="addhomework" method="POST">
                 	<div class="greybox">
 	                    <div class="homeworkadd">
 	                        <div class="hw">

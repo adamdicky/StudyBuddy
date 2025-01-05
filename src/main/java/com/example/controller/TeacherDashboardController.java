@@ -22,7 +22,7 @@ public class TeacherDashboardController {
 			String dt = details;
 			String cl = classname;
 			
-			HomeworkModel homeworkobject = new HomeworkModel(homework, deadline, details, classname);
+			HomeworkModel homeworkobject = new HomeworkModel(hw, dl, dt, cl);
 			
 			@SuppressWarnings("unchecked") //suppress warning of cannot guarantee the cast is safe
 			List<HomeworkModel> homeworkList = (List<HomeworkModel>) session.getAttribute("homeworklist"); //retrieve cart attb from user session
@@ -31,8 +31,16 @@ public class TeacherDashboardController {
 			}
 			
 			homeworkList.add(homeworkobject); //adds all the instances from object book (title, bla bla bla) to current session
-			session.setAttribute("homeworkobject", homeworkobject); //update session attb with modified cart (the new session)
+			session.setAttribute("homeworkList", homeworkList); //update session attb with modified cart (the new session)
 			
 			return "redirect:/TeacherDashboard.jsp";
+		}
+		
+		@RequestMapping("/TeacherDashboard")
+		public String TeacherDashboard(HttpSession session, Model model) {
+			@SuppressWarnings("unchecked") //suppress warning of cannot guarantee the cast is safe
+			List<HomeworkModel> homeworkList = (List<HomeworkModel>) session.getAttribute("homeworklist"); //retrieve cart attb from user session
+			model.addAttribute("homeworkList", homeworkList);
+			return "TeacherDashboard";
 		}
 }

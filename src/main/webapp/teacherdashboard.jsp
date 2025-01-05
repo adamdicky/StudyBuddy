@@ -209,11 +209,11 @@
                 </h1>
                 
                 <div class="greybox">
-                <c:if test="${not empty homeworklist}">
-                	<c:forEach var="homeworkobject" items="${homeworklist}" varStatus="status">
+                <c:if test="${not empty homeworkList}">
+                	<c:forEach var="homeworkobject" items="${homeworkList}" varStatus="status">
 	                	<div class="homework-item">
 	                        <div class="homework-detail"><a><b>${homeworkobject.getDetails()}</b></a></div>
-	                        <div class="homework-subject"><a>${homeworkobject.getSubject()}</a></div>
+	                        <div class="homework-subject"><a>${homeworkobject.getHomework()}</a></div>
 	                        <div class="homework-class"><a>${homeworkobject.getClassname()}</a></div>
 	                        <div class="homework-action">
 	                            <button class="delete-btn"><b>-</b></button>
@@ -222,6 +222,10 @@
 	                        </div>
 	                    </div>
 	                </c:forEach>
+	             </c:if>
+	             
+	             <c:if test="${empty homeworkList}">
+	             	<p>There is no homework.</p>
 	             </c:if>
 	                
                     <!-- 
