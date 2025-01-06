@@ -57,6 +57,39 @@ public class TeacherDashboardController {
 		}
 		
 		@RequestMapping("/edithomework")
+		public String edithomework(@RequestParam("index") int index, Model model, HttpSession session) {
+		    @SuppressWarnings("unchecked")
+		    List<HomeworkModel> homeworkList = (List<HomeworkModel>) session.getAttribute("homeworkList");
+		    
+		    if(homeworkList != null && index < homeworkList.size()) {
+		        model.addAttribute("homework", homeworkList.get(index));
+		        model.addAttribute("index", index);
+		    }
+		    
+		    return "TeacherDashboardADD";
+		}
+		
+		@RequestMapping("/updatehomework")
+		public String updateHomework(@RequestParam("index") int index, @RequestParam("hw") String homework, 
+		    @RequestParam("dl") String deadline, @RequestParam("dt") String details, 
+		    @RequestParam("cl") String classname, HttpSession session) {
+			// Your existing edit logic here
+			
+			@SuppressWarnings("unchecked")
+			List<HomeworkModel> homeworkList = (List<HomeworkModel>) session.getAttribute("homeworkList");
+			
+			if(homeworkList != null && index < homeworkList.size()) {
+				HomeworkModel updateHomework = homeworkList.get(index);
+				updateHomework.setHomework(homework);
+				updateHomework.setDeadline(deadline);
+				updateHomework.setDetails(details);
+				updateHomework.setClassname(classname);
+			}
+			
+		    return "redirect:/TeacherDashboard.jsp";
+		}
+		/*
+		@RequestMapping("/edithomework")
 		public String edithomework(@RequestParam("index") int index, @RequestParam("hw") String homework, @RequestParam("dl") String deadline, @RequestParam("dt") String details, @RequestParam("cl") String classname, HttpSession session) {
 			@SuppressWarnings("unchecked")
 			List<HomeworkModel> homeworkList = (List<HomeworkModel>) session.getAttribute("homeworkList");
@@ -71,6 +104,9 @@ public class TeacherDashboardController {
 			
 			return "redirect:/TeacherDashboard.jsp";
 		}
+		*/
+		
+		
 		
 		
 }

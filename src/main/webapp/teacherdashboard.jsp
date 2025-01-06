@@ -224,8 +224,8 @@
 	                            	<input type="hidden" name="del" value=${status.index}>
 	                            	<button class="delete-btn"><b>-</b></button>
 	                            </form>
-	                            <form class="form-btn" action="edithomework" method="POST">
-	                            	<input type="hidden" name="index" value="${index}"/>
+	                            <form class="form-btn" action="edithomework" method="GET">
+	                            	<input type="hidden" name="index" value="${status.index}"/>
 	                            	<button class="edit-btn">/</button>
 	                            </form>
 	                            <form class="form-btn" action="opensubmission"><button class="view-btn">VIEW SUBMISSION</button></form>

@@ -177,7 +177,7 @@
                     ADD HOMEWORK 
                 </h1>
                 
-                <form action="${homework == null ? 'addhomework' : 'edithomework'}" method="POST">
+                <form action="${homework == null ? 'addhomework' : 'updatehomework'}" method="POST">
 				<!-- <input type="hidden" name="index" value="${index}"/> -->
 
 	               	<c:if test="${homework != null}">
