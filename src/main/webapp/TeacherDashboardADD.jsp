@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <html>
     <head>
         <link href='https://fonts.googleapis.com/css?family=Anek Bangla' rel='stylesheet'>
@@ -177,7 +178,14 @@
                 </h1>
                 
                 <form action="${homework == null ? 'addhomework' : 'edithomework'}" method="POST">
-                <input type="hidden" name="index" value="${index}"/>
+				<!-- <input type="hidden" name="index" value="${index}"/> -->
+
+	               	<c:if test="${homework != null}">
+	                	<input type="hidden" name="index" value="${index}"/>
+	                </c:if>
+	               <!-- index is not detected in controller.. idky -->
+	               	
+               
                 	<div class="greybox">
 	                    <div class="homeworkadd">
 	                        <div class="hw">
