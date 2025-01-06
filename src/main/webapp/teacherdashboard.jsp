@@ -149,6 +149,10 @@
                 align-items: center;
             }
 
+            .form-btn {
+               margin:auto;
+            }
+
             .delete-btn {
                 background-color: #ff4757;
                 color: white;
@@ -216,9 +220,9 @@
 	                        <div class="homework-subject"><a>${homeworkobject.getHomework()}</a></div>
 	                        <div class="homework-class"><a>${homeworkobject.getClassname()}</a></div>
 	                        <div class="homework-action">
-	                            <form><button class="delete-btn"><b>-</b></button></form>
-	                            <button class="edit-btn">/</button>
-	                            <button class="view-btn">VIEW SUBMISSION</button>
+	                            <form class="form-btn"><button class="delete-btn"><b>-</b></button></form>
+	                            <form class="form-btn"><button class="edit-btn">/</button></form>
+	                            <form class="form-btn"><button class="view-btn">VIEW SUBMISSION</button></form>
 	                        </div>
 	                        
 	                        
