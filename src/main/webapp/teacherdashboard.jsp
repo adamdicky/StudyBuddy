@@ -220,9 +220,12 @@
 	                        <div class="homework-subject"><a>${homeworkobject.getHomework()}</a></div>
 	                        <div class="homework-class"><a>${homeworkobject.getClassname()}</a></div>
 	                        <div class="homework-action">
-	                            <form class="form-btn"><button class="delete-btn"><b>-</b></button></form>
-	                            <form class="form-btn"><button class="edit-btn">/</button></form>
-	                            <form class="form-btn"><button class="view-btn">VIEW SUBMISSION</button></form>
+	                            <form class="form-btn" action="deletehomework" method="POST">
+	                            	<input type="hidden" name="del" value=${status.index}>
+	                            	<button class="delete-btn"><b>-</b></button>
+	                            </form>
+	                            <form class="form-btn" action="edithomework" method="POST"><button class="edit-btn">/</button></form>
+	                            <form class="form-btn" action="opensubmission"><button class="view-btn">VIEW SUBMISSION</button></form>
 	                        </div>
 	                        
 	                        
@@ -231,7 +234,7 @@
 	             </c:if>
 	             
 	             <c:if test="${empty homeworkList}">
-	             	<p>There is no homework.</p>
+	             	<p style= "font-family: 'Anek Bangla';">There is no homework.</p>
 	             </c:if>
 	                
                     <!-- 

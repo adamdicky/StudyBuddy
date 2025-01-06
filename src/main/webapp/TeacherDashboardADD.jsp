@@ -176,26 +176,27 @@
                     ADD HOMEWORK 
                 </h1>
                 
-                <form action="addhomework" method="POST">
+                <form action="${homework == null ? 'addhomework' : 'edithomework'}" method="POST">
+                <input type="hidden" name="index" value="${index}"/>
                 	<div class="greybox">
 	                    <div class="homeworkadd">
 	                        <div class="hw">
 	                            <label for="hw">Homework Subject:</label><br>
-	                            <input class="textbox" type="text" id="hw" name="hw">
+	                            <input class="textbox" type="text" id="hw" name="hw" value="${homework != null ? homework.homework : ''}" required />
 	                        </div>
 	                        <div class="dl">   
 	                            <label for="dl">Deadline:</label><br>
-	                            <input class="textbox" type="text" id="dl" name="dl">
+	                            <input class="textbox" type="text" id="dl" name="dl" value="${homework != null ? homework.deadline : ''}" required>
 	                        </div>
 	
 	                        <div class="dt">
 	                            <label for="dt">Details:</label><br>
-	                            <input class="textbox" type="text" id="dt" name="dt">
+	                            <input class="textbox" type="text" id="dt" name="dt" value="${homework != null ? homework.details : ''}" required>
 	                        </div>
 	
 	                        <div class="cl">
 	                            <label for="cl">Class:</label><br>
-	                            <input class="textbox" type="text" id="cl" name="cl">
+	                            <input class="textbox" type="text" id="cl" name="cl" value="${homework != null ? homework.classname : ''}" required />
 	                        </div>
 	                    </div>
 	                    <!-- <form class="addhomework-form">
@@ -217,19 +218,19 @@
 	                        <input class="textbox" type="text" id="cl" name="cl">
 	                        <br>
 	                      </form> -->
+	                      
+	                      <div class="confirmbutton">
+		                  <center>
+		                  	<!-- <INPUT class="confirm-btn "NAME="submit" TYPE="submit" VALUE="Submit"> -->
+		                  	<button class="confirm-btn" type="submit">
+								${homework == null? 'Submit' : 'Update Homework'}
+							</button>
+		                  </center>
                		</div>
-               		
-               		<div class="confirmbutton">
-                    <center>
-                    	<INPUT class="confirm-btn "NAME="submit" TYPE="submit" VALUE="Submit">
-                        <!-- <button class="confirm-btn">CONFIRM</button> -->
-                    </center>
                		</div>
+               		</form>
                		
-                </form>
-             
-
-
+               		
             </div>
         </div>
     </body>

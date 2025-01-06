@@ -39,8 +39,38 @@ public class TeacherDashboardController {
 		@RequestMapping("/TeacherDashboard")
 		public String TeacherDashboard(HttpSession session, Model model) {
 			@SuppressWarnings("unchecked") //suppress warning of cannot guarantee the cast is safe
-			List<HomeworkModel> homeworkList = (List<HomeworkModel>) session.getAttribute("homeworklist"); //retrieve cart attb from user session
+			List<HomeworkModel> homeworkList = (List<HomeworkModel>) session.getAttribute("homeworkList"); //retrieve cart attb from user session
 			model.addAttribute("homeworkList", homeworkList);
 			return "TeacherDashboard";
 		}
+		
+		
+		@RequestMapping("/deletehomework")
+		public String deletehomework(@RequestParam("del") int index, HttpSession session) {
+			@SuppressWarnings("unchecked")
+			List<HomeworkModel> homeworkList = (List<HomeworkModel>) session.getAttribute("homeworkList");
+			if (homeworkList != null && index < homeworkList.size()) {
+				homeworkList.remove(index);
+			}
+			
+			return "redirect:/TeacherDashboard.jsp";
+		}
+		
+		@RequestMapping("/edithomework")
+		public String edithomework(@RequestParam("index") int index, @RequestParam("hw") String homework, @RequestParam("dl") String deadline, @RequestParam("dt") String details, @RequestParam("cl") String classname, HttpSession session) {
+			@SuppressWarnings("unchecked")
+			List<HomeworkModel> homeworkList = (List<HomeworkModel>) session.getAttribute("homeworkList");
+			
+			if(homeworkList != null && index < homeworkList.size()) {
+				HomeworkModel updateHomework = homeworkList.get(index);
+				updateHomework.setHomework(homework);
+				updateHomework.setDeadline(deadline);
+				updateHomework.setDetails(details);
+				updateHomework.setClassname(classname);
+			}
+			
+			return "redirect:/TeacherDashboard.jsp";
+		}
+		
+		
 }
