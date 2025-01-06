@@ -88,6 +88,11 @@ public class TeacherDashboardController {
 			
 		    return "redirect:/TeacherDashboard.jsp";
 		}
+		
+		@RequestMapping("/opensubmission")
+		public String opensubmission() {
+			return "ViewSubmission";
+		}
 		/*
 		@RequestMapping("/edithomework")
 		public String edithomework(@RequestParam("index") int index, @RequestParam("hw") String homework, @RequestParam("dl") String deadline, @RequestParam("dt") String details, @RequestParam("cl") String classname, HttpSession session) {
