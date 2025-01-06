@@ -219,6 +219,7 @@
 	                        <div class="homework-detail"><a><b>${homeworkobject.getDetails()}</b></a></div>
 	                        <div class="homework-subject"><a>${homeworkobject.getHomework()}</a></div>
 	                        <div class="homework-class"><a>${homeworkobject.getClassname()}</a></div>
+	                        <div class="homework-title"><a>${homeworkobject.getTitle()}</a></div>
 	                        <div class="homework-action">
 	                            <form class="form-btn" action="deletehomework" method="POST">
 	                            	<input type="hidden" name="del" value=${status.index}>

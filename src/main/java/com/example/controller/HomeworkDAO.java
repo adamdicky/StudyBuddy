@@ -23,7 +23,20 @@ public class HomeworkDAO {
 		 }
 	 }
 	 
+	 //Get database connection
 	 private Connection getConnection() throws SQLException {
 	        return DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
 	 }
+	 
+	 //Method to send homework
+	 public boolean addHomework(HomeworkModel homework) {
+		 //Validate input: homework must not be null or empty
+		 if (homework.getHomework() == null) {
+			 return false; //return false if homework (homework subject name) is null or empty
+		 }
+		 
+		 //SQL Query to add
+	 }
+	 
+	 
 }

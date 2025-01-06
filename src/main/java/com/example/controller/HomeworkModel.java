@@ -6,13 +6,15 @@ public class HomeworkModel {
 	private String deadline;
 	private String details;
 	private String classname;
+	private String title;
 	private String grade;
 	
-	public HomeworkModel(String hw, String dl, String dt, String cl) {
+	public HomeworkModel(String hw, String dl, String dt, String cl, String tt) {
 		this.homework=hw;
 		this.deadline=dl;
 		this.details=dt;
 		this.classname=cl;
+		this.title=tt;
 	}
 	
 	public String getHomework() {
@@ -29,6 +31,10 @@ public class HomeworkModel {
 
 	public String getClassname() {
 		return classname;
+	}
+	
+	public String getTitle() {
+		return title;
 	}
 
 	//getters
@@ -47,6 +53,10 @@ public class HomeworkModel {
 
 	public void setClassname(String classname) {
 		this.classname = classname;
+	}
+	
+	public void setTitle(String title) {
+		this.title=title;
 	}
 
 	//setters
