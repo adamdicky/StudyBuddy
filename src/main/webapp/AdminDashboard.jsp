@@ -161,36 +161,39 @@
                 color: #0000FF;
             }
 
+			.form-btn  {
+               margin:auto;
+            }
+            
             .admin-action {
                 display: flex;
                 gap: 0.5rem;
                 justify-content: flex-end;
             }
+            
+            .admin-action form {
+   				 margin: 0;
+			}
 
-            .delete-btn {
-                background-color: #ff4757;
-                color: white;
-                border: none;
-                border-radius: 50%;
-                width: 30px;
-                height: 30px;
-                cursor: pointer;
-                text-align: center;
-                text-decoration: none;
-            }
+           .delete-btn, .edit-btn {
+    			border: none;
+    			border-radius: 50%;
+    			width: 30px;
+    			height: 30px;
+    			cursor: pointer;
+    			text-align: center;
+    			color: white;
+    			font-weight: bold;
+    			text-decoration: none;
+			}
 
-            .edit-btn {
-                background-color: #4B5EE4;
-                color: white;
-                border: none;
-                border-radius: 50%;
-                width: 30px;
-                height: 30px;
-                cursor: pointer;
-                text-align: center;
-                justify-content: flex-end;
-                text-decoration: none;
-            }
+			.delete-btn {
+    			background-color: #ff4757;
+			}
+
+			.edit-btn {
+   				background-color: #4B5EE4;
+			}
         
     </style>
     <title>Admin Dashboard</title>
@@ -227,9 +230,12 @@
 	                        <div class="username-detail"><a>********</a></div>
 	                        <div class="username-detail"><a>${user.email}</a></div>
 	                        <div class="username-detail"><a>${user.role}</a></div>
+	                        
 	                        <div class="admin-action">
-	                            <a href="AdminDELETEUser.jsp" class="delete-btn"><b>-</b></a>
-	                            <a href="AdminEDITUser.jsp" class="edit-btn">/</a>	                            
+	                           <a href="deleteuser.jsp?name=${user.name}&password=${user.password}&email=${user.email}&role=${user.role}" 
+   									class="delete-btn"><b>-</b></a>	                        	                                         
+	                           <a href="edituser.jsp?id=&name=${user.name}&password=${user.password}&email=${user.email}&role=${user.role}" 
+	                           		class="edit-btn">/</a>                      
 	                        </div>       
 	                    </div> 
 	                 </c:forEach>

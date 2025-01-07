@@ -228,7 +228,14 @@
 	                            	<input type="hidden" name="index" value="${status.index}"/>
 	                            	<button class="edit-btn">/</button>
 	                            </form>
-	                            <form class="form-btn" action="opensubmission"><button class="view-btn">VIEW SUBMISSION</button></form>
+	                            <form class="form-btn" action="opensubmission" method="get">
+	                            	<input type="hidden" name="hw" value="${homeworkobject.homework}">
+								    <input type="hidden" name="dl" value="${homeworkobject.deadline}">
+								    <input type="hidden" name="dt" value="${homeworkobject.details}">
+								    <input type="hidden" name="cl" value="${homeworkobject.classname}">
+								
+	                            	<button class="view-btn">VIEW SUBMISSION</button>
+	                            </form>
 	                        </div>
 	                        
 	                        

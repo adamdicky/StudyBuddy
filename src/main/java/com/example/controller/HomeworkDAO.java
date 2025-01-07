@@ -1,6 +1,8 @@
 package com.example.controller;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class HomeworkDAO {
@@ -26,6 +28,9 @@ public class HomeworkDAO {
 	 private Connection getConnection() throws SQLException {
 	        return DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
 	 }
+	 
+	 //Method to fetch all available homeworks data in database
+	 ////////
 	 
 	 //Method add homework to database
 	 public boolean addHomework(HomeworkModel homework) {
@@ -98,4 +103,6 @@ public class HomeworkDAO {
 		 
 		 return false;
 	 }
+	 
+	 
 }

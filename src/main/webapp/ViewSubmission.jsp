@@ -198,11 +198,12 @@
         <div class="activity-container">
             <div class="bodycontent">
                 <h1 class="activity-title">
-                    ACTIVITY BOOK PAGE 10 - 15
+                    ${homeworkDetails}
                 </h1>
                 
                 <div class="greybox">
-                    <div class="activity-item">
+                	
+                	 <div class="activity-item">
                         <div class="student-name"><a>MUHAMMAD ALI</a></div>
                         <div class="student-class"><a>5 AMANAH</a></div>
                        
@@ -211,37 +212,7 @@
                         </div>
                         <button class="viewgrade-btn">60/100</button>
                     </div>
-
-                    <div class="activity-item">
-                        <div class="student-name"><a>MUHAMMAD AHMAD</a></div>
-                        <div class="student-class"><a>5 AMANAH</a></div>
-                        
-                        <div class="submission-action">                                                        
-                            <div class="submitted-btn"><a>SUBMITTED</a></div>
-                        </div>
-                        <button class="viewgrade-btn">90/100</button>
-                    </div>
-
-                    <div class="activity-item">
-                        <div class="student-name"><a>WAN ARIF</a></div>
-                        <div class="student-class"><a>5 AMANAH</a></div>
-                       
-                        <div class="submission-action">                                                        
-                            <div class="submitted-btn"><a>SUBMITTED</a></div>
-                        </div>
-                        <button class="viewgrade-btn">70/100</button>
-                    </div>
-
-                    <div class="activity-item">
-                        <div class="student-name"><a>ADAM SAFWAN</a></div>
-                        <div class="student-class"><a>5 AMANAH</a></div>
-                       
-                        <div class="submission-action">                                                        
-                            <div class="submitted-btn"><a>SUBMITTED</a></div>
-                        </div>
-                        <button class="viewgrade-btn">85/100</button>
-                    </div>
-
+                    
                     <div class="activity-item">
                         <div class="student-name"><a>WAN AKIF</a></div>
                         <div class="student-class"><a>5 AMANAH</a></div>
@@ -251,16 +222,7 @@
                         </div>
                         <button class="viewgrade-btn">NOT GRADE</button>
                     </div>
-
-                    <div class="activity-item">
-                        <div class="student-name"><a>WAN ZAFIRZAN</a></div>
-                        <div class="student-class"><a>5 AMANAH</a></div>
-                       
-                        <div class="submission-action">                                                        
-                            <div class="notsubmitted-btn"><a>NOT SUBMITTED</a></div>
-                        </div>
-                        <button class="viewgrade-btn">NOT GRADE</button>
-                    </div>
+            
                 </div>
             </div>
         </div>

@@ -49,7 +49,10 @@ public class TeacherDashboardController {
 		public String TeacherDashboard(HttpSession session, Model model) {
 			@SuppressWarnings("unchecked") //suppress warning of cannot guarantee the cast is safe
 			List<HomeworkModel> homeworkList = (List<HomeworkModel>) session.getAttribute("homeworkList"); //retrieve cart attb from user session
-			model.addAttribute("homeworkList", homeworkList);
+			if (homeworkList == null) {
+				homeworkList = new ArrayList<>(); //initialize empty arraylist to start a new shopping cart session
+			}
+			
 			return "TeacherDashboard";
 		}
 		
@@ -124,6 +127,7 @@ public class TeacherDashboardController {
 			
 		    return "redirect:/TeacherDashboard.jsp";
 		}
+		
 		
 		@RequestMapping("/opensubmission")
 		public String opensubmission() {

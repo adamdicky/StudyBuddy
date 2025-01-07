@@ -7,15 +7,14 @@ public class HomeworkModel {
 	private String details;
 	private String classname;
 	
-	
 	public HomeworkModel(String hw, String dl, String dt, String cl) {
 		this.homework=hw;
 		this.deadline=dl;
 		this.details=dt;
 		this.classname=cl;
-
-	}
+	} //for general use
 	
+
 	public String getHomework() {
 		return homework;
 	}
