@@ -52,13 +52,14 @@ public class HomeworkDAO {
 	 
 	 //Method to delete homework from database
 	 public boolean deleteHomework(HomeworkModel homework) {
-		 String query = "DELETE FROM homeworks WHERE homework = ? AND deadline = ? AND classname = ?";
+		 String query = "DELETE FROM homeworks WHERE homework = ? AND deadline = ? AND classname = ? AND details = ?";
 		 try (Connection connection = getConnection();
 			  PreparedStatement ps = connection.prepareStatement(query)) {
 			 
 			 ps.setString(1, homework.getHomework());
 			 ps.setString(2, homework.getDeadline());
 			 ps.setString(3, homework.getClassname());
+			 ps.setString(4, homework.getDetails());
 			 
 			 return ps.executeUpdate() > 0; //return true if delete is successful
 		 }
@@ -72,7 +73,7 @@ public class HomeworkDAO {
 	 
 	 //Method to update homework to database
 	 public boolean updateHomework(HomeworkModel original, HomeworkModel updated) {
-		 String query = "UPDATE homeworks SET homework = ?, deadline = ?, details = ?, classname? WHERE homework = ? AND deadline = ? AND classname = ?";
+		 String query = "UPDATE homeworks SET homework = ?, deadline = ?, details = ?, classname = ?" + "WHERE homework = ? AND deadline = ? AND classname = ? AND details = ?";
 		 try (Connection connection = getConnection();
 			  PreparedStatement ps = connection.prepareStatement(query)) {
 			 
@@ -83,9 +84,10 @@ public class HomeworkDAO {
 			 ps.setString(4, updated.getClassname());
 			 
 			 //old value
-			 ps.setString(5, updated.getHomework());
-			 ps.setString(6, updated.getDeadline());
-			 ps.setString(7, updated.getClassname());
+			 ps.setString(5, original.getHomework());
+			 ps.setString(6, original.getDeadline());
+			 ps.setString(7, original.getClassname());
+			 ps.setString(8, original.getDetails());
 			 
 			 return ps.executeUpdate() > 0; //return true if update successful
 		 }
