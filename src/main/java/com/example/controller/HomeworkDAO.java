@@ -1,8 +1,7 @@
 package com.example.controller;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class HomeworkDAO {
 	
@@ -52,15 +51,16 @@ public class HomeworkDAO {
 	 }
 	 
 	 //Method to delete homework from database
-	 public boolean deleteHomework(int id) {
-		 String query = "DELETE FROM homeworks WHERE id = ?";
+	 public boolean deleteHomework(HomeworkModel homework) {
+		 String query = "DELETE FROM homeworks WHERE homework = ? AND deadline = ? AND classname = ?";
 		 try (Connection connection = getConnection();
 			  PreparedStatement ps = connection.prepareStatement(query)) {
 			 
-			 ps.setInt(1, id);
+			 ps.setString(1, homework.getHomework());
+			 ps.setString(2, homework.getDeadline());
+			 ps.setString(3, homework.getClassname());
 			 
-			 int rowsDeleted = ps.executeUpdate();
-			 return rowsDeleted > 0; //return true if delete was successful
+			 return ps.executeUpdate() > 0; //return true if delete is successful
 		 }
 		 
 		 catch (SQLException e) {
@@ -71,18 +71,23 @@ public class HomeworkDAO {
 	 }
 	 
 	 //Method to update homework to database
-	 public boolean updateHomework(int id, HomeworkModel homework) {
-		 String query = "UPDATE homeworks SET homework = ?, deadline = ?, details = ?, classname? WHERE id = ?";
+	 public boolean updateHomework(HomeworkModel original, HomeworkModel updated) {
+		 String query = "UPDATE homeworks SET homework = ?, deadline = ?, details = ?, classname? WHERE homework = ? AND deadline = ? AND classname = ?";
 		 try (Connection connection = getConnection();
 			  PreparedStatement ps = connection.prepareStatement(query)) {
 			 
-			 ps.setString(1, homework.getHomework());
-			 ps.setString(2, homework.getDeadline());
-			 ps.setString(3, homework.getDetails());
-			 ps.setString(4, homework.getClassname());
+			 //new value
+			 ps.setString(1, updated.getHomework());
+			 ps.setString(2, updated.getDeadline());
+			 ps.setString(3, updated.getDetails());
+			 ps.setString(4, updated.getClassname());
 			 
-			 int rowsUpdated = ps.executeUpdate();
-			 return rowsUpdated > 0; //return true if update successful
+			 //old value
+			 ps.setString(5, updated.getHomework());
+			 ps.setString(6, updated.getDeadline());
+			 ps.setString(7, updated.getClassname());
+			 
+			 return ps.executeUpdate() > 0; //return true if update successful
 		 }
 		 
 		 catch (SQLException e) {
