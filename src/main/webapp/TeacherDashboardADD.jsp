@@ -206,11 +206,6 @@
 	                            <label for="cl">Class:</label><br>
 	                            <input class="textbox" type="text" id="cl" name="cl" value="${homework != null ? homework.classname : ''}" required />
 	                        </div>
-	                        
-	                        <div class="tt">
-	                            <label for="tt">Title:</label><br>
-	                            <input class="textbox" type="text" id="tt" name="tt" value="${homework != null ? homework.title : ''}" required />
-	                        </div>
 	                    </div>
 	                    <!-- <form class="addhomework-form">
 	                        <label for="hw">Homework Name:</label><br>

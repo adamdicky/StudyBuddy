@@ -16,14 +16,13 @@ public class TeacherDashboardController {
 
 		@RequestMapping("/addhomework")
 		//correspond to addhomework in TeacherDashboardADD.jsp
-		public String addhomework(@RequestParam("hw") String homework, @RequestParam("dl") String deadline, @RequestParam("dt") String details, @RequestParam("cl") String classname, @RequestParam("tt") String title, HttpSession session) {
+		public String addhomework(@RequestParam("hw") String homework, @RequestParam("dl") String deadline, @RequestParam("dt") String details, @RequestParam("cl") String classname, HttpSession session) {
 			String hw = homework;
 			String dl = deadline;
 			String dt = details;
 			String cl = classname;
-			String tt = title;
 			
-			HomeworkModel homeworkobject = new HomeworkModel(hw, dl, dt, cl, tt);
+			HomeworkModel homeworkobject = new HomeworkModel(hw, dl, dt, cl);
 			
 			@SuppressWarnings("unchecked") //suppress warning of cannot guarantee the cast is safe
 			List<HomeworkModel> homeworkList = (List<HomeworkModel>) session.getAttribute("homeworkList"); //retrieve cart attb from user session
@@ -73,7 +72,7 @@ public class TeacherDashboardController {
 		@RequestMapping("/updatehomework")
 		public String updateHomework(@RequestParam("index") int index, @RequestParam("hw") String homework, 
 		    @RequestParam("dl") String deadline, @RequestParam("dt") String details, 
-		    @RequestParam("cl") String classname,@RequestParam("tt") String title, HttpSession session) {
+		    @RequestParam("cl") String classname, HttpSession session) {
 			// Your existing edit logic here
 			
 			@SuppressWarnings("unchecked")
@@ -85,7 +84,6 @@ public class TeacherDashboardController {
 				updateHomework.setDeadline(deadline);
 				updateHomework.setDetails(details);
 				updateHomework.setClassname(classname);
-				updateHomework.setTitle(title);
 			}
 			
 		    return "redirect:/TeacherDashboard.jsp";
