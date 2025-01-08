@@ -23,10 +23,11 @@ public class AdminController {
     public String saveUser(@RequestParam("name") String name,
                            @RequestParam("password") String password,
                            @RequestParam("email") String email,
-                           @RequestParam("role") String role, 
+                           @RequestParam("role") String role,
+                           @RequestParam("className") String className,
                            Model model) {
         // Create a User object from form data
-        User user = new User(name, password, email, role);
+        User user = new User(name, password, email, role, className);
 
         // Save the user to the database using UserDAO
         boolean isSaved = userDAO.addUser(user);
@@ -51,8 +52,9 @@ public class AdminController {
                             @RequestParam("password") String password, 
                             @RequestParam("email") String email, 
                             @RequestParam("role") String role, 
+                            @RequestParam("className") String className, 
                             Model model) {
-        boolean isDeleted = userDAO.deleteUser(name, password, email, role);
+        boolean isDeleted = userDAO.deleteUser(name, password, email, role, className);
         
         if (isDeleted) {
             model.addAttribute("message", "User deleted successfully!");
@@ -73,14 +75,15 @@ public class AdminController {
                            @RequestParam("email") String email,
                            @RequestParam("role") String role,
                            @RequestParam("originalEmail") String originalEmail,
+                           @RequestParam("className") String className, 
                            HttpSession session) {
         
         // Call the updateUser method in the DAO to update the user in the database
-        boolean isUpdated = userDAO.updateUser(originalEmail, name, password, email, role);
+        boolean isUpdated = userDAO.updateUser(originalEmail, name, password, email, role, className);
 
         if (isUpdated) {
             // If update is successful, create a User object with updated information
-            User updatedUser = new User(name, password, email, role);
+            User updatedUser = new User(name, password, email, role, className);
 
             // Store the updated user in session for display on the next page
             session.setAttribute("updatedUser", updatedUser);

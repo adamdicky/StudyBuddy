@@ -154,20 +154,20 @@ public class TeacherDashboardController {
 			}
 		
 		@RequestMapping("/updategrade")
-		public String updateGrade(@RequestParam("studentName") String studentName,
-		                         @RequestParam("className") String className,
-		                         @RequestParam("grade") String grade,
-		                         @RequestParam("hw") String homework,
-		                         @RequestParam("dl") String deadline,
-		                         @RequestParam("dt") String details) {
-		    
-		    userDAO.updateGrade(studentName, className, grade);
-		    
-		    return "redirect:/opensubmission?hw=" + homework + 
-		           "&dl=" + deadline + 
-		           "&dt=" + details + 
-		           "&cl=" + className;
-		}
+	    public String updateGrade(@RequestParam("studentName") String studentName,
+	                            @RequestParam("className") String className,
+	                            @RequestParam("grade") String grade,
+	                            @RequestParam("hw") String homework,
+	                            @RequestParam("dl") String deadline,
+	                            @RequestParam("dt") String details) {
+	        
+	        userDAO.updateGrade(studentName, className, grade);
+	        
+	        return "redirect:/opensubmission?hw=" + homework + 
+	               "&dl=" + deadline + 
+	               "&dt=" + details + 
+	               "&cl=" + className;
+	    }
 		
 		/*
 		@RequestMapping("/edithomework")
