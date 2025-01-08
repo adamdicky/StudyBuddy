@@ -1,7 +1,9 @@
 package com.example.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -133,6 +135,14 @@ public class TeacherDashboardController {
 		@RequestMapping("/opensubmission")
 		public String opensubmission(@RequestParam("hw") String homework,  @RequestParam("dl") String deadline,  @RequestParam("dt") String details, @RequestParam("cl") String classname, Model model) {
 			List<User> students = userDAO.getStudentsByClass(classname);
+			List<StudentSubmission> submissions = userDAO.getStudentSubmissionsForClass(classname);
+			
+			Map<String, String> submissionStatus = new HashMap<>();
+		    Map<String, String> grades = new HashMap<>();
+		    for (StudentSubmission submission : submissions) {
+		        submissionStatus.put(submission.getName(), submission.getSubmissionStatus());
+		        grades.put(submission.getName(), submission.getGrade());
+		    }
 			
 			model.addAttribute("homeworkDetails", details);
 			model.addAttribute("homework", homework);
@@ -142,6 +152,22 @@ public class TeacherDashboardController {
 			
 			return "ViewSubmission";
 			}
+		
+		@RequestMapping("/updategrade")
+		public String updateGrade(@RequestParam("studentName") String studentName,
+		                         @RequestParam("className") String className,
+		                         @RequestParam("grade") String grade,
+		                         @RequestParam("hw") String homework,
+		                         @RequestParam("dl") String deadline,
+		                         @RequestParam("dt") String details) {
+		    
+		    userDAO.updateGrade(studentName, className, grade);
+		    
+		    return "redirect:/opensubmission?hw=" + homework + 
+		           "&dl=" + deadline + 
+		           "&dt=" + details + 
+		           "&cl=" + className;
+		}
 		
 		/*
 		@RequestMapping("/edithomework")

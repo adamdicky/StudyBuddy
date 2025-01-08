@@ -196,28 +196,85 @@
             
  
         <div class="activity-container">
-            <div class="bodycontent">
-                <h1 class="activity-title">
-                    ${homeworkDetails}
-                </h1>
-                
-                <div class="greybox">
-                	<c:forEach var="student" items="${students}">
-				        <div class="activity-item">
-				            <div class="student-name"><a>${student.name}</a></div>
-				            <div class="student-class"><a>${student.classname}</a></div>
-				            <div class="submission-action">                                                        
-				                <div class="notsubmitted-btn"><a>NOT SUBMITTED</a></div>
-				            </div>
-				            <button class="viewgrade-btn">NOT GRADED</button>
-				        </div>
-				    </c:forEach>
-    
+        	<div class="greybox">
+			    <c:forEach var="student" items="${students}">
+			        <div class="activity-item">
+			            <div class="student-name"><a>${student.name}</a></div>
+			            <div class="student-class"><a>${student.classname}</a></div>
+			            <div class="submission-action">
+			                <c:choose>
+			                    <c:when test="${submissionStatus[student.name] eq 'yes'}">
+			                        <div class="submitted-btn"><a>SUBMITTED</a></div>
+			                    </c:when>
+			                    <c:otherwise>
+			                        <div class="notsubmitted-btn"><a>NOT SUBMITTED</a></div>
+			                    </c:otherwise>
+			                </c:choose>
+			            </div>
+			            <c:choose>
+			                <c:when test="${empty grades[student.name]}">
+			                    <button class="viewgrade-btn" onclick="openGradeModal('${student.name}', '${student.classname}')">
+			                        GRADE
+			                    </button>
+			                </c:when>
+			                <c:otherwise>
+			                    <button class="viewgrade-btn">
+			                        ${grades[student.name]}/100
+			                    </button>
+			                </c:otherwise>
+			            </c:choose>
+			        </div>
+			    </c:forEach>
+			
 			    <c:if test="${empty students}">
 			        <p style="font-family: 'Anek Bangla';">No students found in this class.</p>
 			    </c:if>
-                </div>
+			</div>
+        </div>
+        
+        <div id="gradeModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal" onclick="closeGradeModal()">&times;</span>
+                <h2>Add Grade</h2>
+                <form action="updategrade" method="POST" class="grade-form">
+                    <input type="hidden" id="studentName" name="studentName">
+                    <input type="hidden" id="className" name="className">
+                    <input type="hidden" name="hw" value="${homework}">
+                    <input type="hidden" name="dl" value="${deadline}">
+                    <input type="hidden" name="dt" value="${details}">
+                    
+                    <label for="grade">Enter Grade (0-100):</label>
+                    <input type="number" id="grade" name="grade" class="grade-input" 
+                           min="0" max="100" required>
+                    
+                    <div class="modal-buttons">
+                        <button type="button" class="modal-cancel-btn" 
+                                onclick="closeGradeModal()">Cancel</button>
+                        <button type="submit" class="modal-confirm-btn">Confirm</button>
+                    </div>
+                </form>
             </div>
         </div>
+        
+         <script>
+            function openGradeModal(studentName, className) {
+                const modal = document.getElementById('gradeModal');
+                document.getElementById('studentName').value = studentName;
+                document.getElementById('className').value = className;
+                modal.style.display = 'flex';
+            }
+
+            function closeGradeModal() {
+                document.getElementById('gradeModal').style.display = 'none';
+            }
+
+            // Close modal if clicking outside of it
+            window.onclick = function(event) {
+                const modal = document.getElementById('gradeModal');
+                if (event.target == modal) {
+                    closeGradeModal();
+                }
+            }
+        </script>
     </body>
 </html>

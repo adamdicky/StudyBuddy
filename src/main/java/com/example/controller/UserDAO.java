@@ -122,7 +122,7 @@ public class UserDAO {
         }
     }
     
-    /************/
+    /*FOR OTHER USES AKA GRADING ETC*/
     
     public List<User> getStudentsByClass(String className) {
         List<User> students = new ArrayList<>();
@@ -146,5 +146,47 @@ public class UserDAO {
             e.printStackTrace();
         }
         return students;
+    }
+    
+    public List<StudentSubmission> getStudentSubmissionsForClass(String className) {
+        List<StudentSubmission> submissions = new ArrayList<>();
+        String query = "SELECT u.name, u.className, hs.student_submission, hs.grade " + "FROM users u " + "LEFT JOIN homework_submissions hs ON u.name = hs.name " + "WHERE u.className = ? AND u.role = 'Student'";
+        
+        try (Connection connection = getConnection();
+             PreparedStatement ps = connection.prepareStatement(query)) {
+            
+            ps.setString(1, className);
+            ResultSet rs = ps.executeQuery();
+            
+            while (rs.next()) {
+                StudentSubmission submission = new StudentSubmission();
+                submission.setName(rs.getString("name"));
+                submission.setClassName(rs.getString("className"));
+                submission.setSubmissionStatus(rs.getString("student_submission"));
+                submission.setGrade(rs.getString("grade"));
+                submissions.add(submission);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return submissions;
+    }
+
+    public boolean updateGrade(String studentName, String className, String grade) {
+        String query = "UPDATE homework_submissions SET grade = ? WHERE name = ? AND class = ?";
+        
+        try (Connection connection = getConnection();
+             PreparedStatement ps = connection.prepareStatement(query)) {
+            
+            ps.setString(1, grade);
+            ps.setString(2, studentName);
+            ps.setString(3, className);
+            
+            int rowsUpdated = ps.executeUpdate();
+            return rowsUpdated > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 }
