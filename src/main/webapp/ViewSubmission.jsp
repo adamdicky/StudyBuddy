@@ -179,15 +179,15 @@
         <header>
             <div class="navbar">
                 <div class="content1">
-                    <a href="GradeHomeworkView.jsp"><b>STUDYBUDDY</b></a>
+                    <a><b>STUDYBUDDY</b></a>
                 </div>
     
                 <div class="content2">
-                    <a>Welcome back, Cikgu Afiq<b></b></a>
+                    <a>Welcome back, Cikgu<b></b></a>
                 </div>
     
                 <div class="content3">
-                    <a><b>LOGOUT</b></a>
+                    <a href="Login.jsp"><b>LOGOUT</b></a>
                 </div>
             </div>
         </header>

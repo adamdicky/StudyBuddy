@@ -150,15 +150,15 @@
 <header>
         <div class="navbar">
             <div class="content1">
-                <a href="teacherdashboardnew.html"><b>STUDYBUDDY</b></a>
+                 <a ><b>STUDYBUDDY</b></a>
             </div>
 
             <div class="content2">
-                
+                 <a>Welcome back, Student<b></b></a>
             </div>
 
             <div class="content3">
-                <a><b>LOGOUT</b></a>
+                <a href="Login.jsp"><b>LOGOUT</b></a>
             </div>
         </div>
     </header>
@@ -167,34 +167,40 @@
                 </h1>
     <div class="homework-container">
             <div class="bodycontent">
-                <h1 class="homework-title">
-                    HOMEWORKS 
-                </h1>
-                
-                <div class="greybox">
-                    <div class="homework-item">
-                        <div class="homework-detail"><a>ACTIVITY BOOK PAGE 12 - 14</a></div>
-                        <div class="homework-info">Please complete all questions in the activity book from page 10 - 15 </div>
-                        <div></div>
-                        <button class="submit-btn">submit</button>
-                    </div>
-
-                    <div class="homework-item">
-                        <div class="homework-detail"><a>ACTIVITY BOOK PAGE 12 - 14</a></div>
-                        <div class="homework-info">Please complete all questions in the activity book from page 10 - 15 </div>
-                        <div></div>
-                        <button class="submit-btn">submit</button>
-                    </div>
-                    
-                    <div class="homework-item">
-                        <div class="homework-detail"><a>ACTIVITY BOOK PAGE 12 - 14</a></div>
-                   		<div class="homework-info">Please complete all questions in the activity book from page 10 - 15 </div>
-                        <div></div>
-                        <button class="submit-btn">submit</button>
+            <div class="greybox">
+              
+                  
+             
+                	<c:forEach var="homework" items="${homeworks}" >
+	                	
+	                	
+	                	<div class="homework-item">
+	                	
+	                        <div class="homework-detail"><a>${homework.details}</a></div>
+	                        <div> </div>
+	                      
+	                       	
+	                        <div class="homework-subject">
+	                        <a class="homework-detail">Due</a>
+	                        <a>:${homework.deadline}</a>
+	                        </div>
+	                        
+	                        <div>
+	                        <a href="HomeworkSubmission.jsp">
+	                        <button class="submit-btn" type="submit">submit</button>
+	                        </a>
+	                        </div>
+	                       
+	                      	
+                        
+	                           
+	                    </div> 
+	                 </c:forEach>
+	                
+           
             </div>
         </div>
         
-    </div>
    </div>
 </body>
 </html>

@@ -158,7 +158,7 @@
         <header>
             <div class="navbar">
                 <div class="content1">
-                    <a href="teacherdashboardnew.html"><b>STUDYBUDDY</b></a>
+                   <a ><b>STUDYBUDDY</b></a>
                 </div>
     
                 <div class="content2">
@@ -166,7 +166,7 @@
                 </div>
     
                 <div class="content3">
-                    <a><b>LOGOUT</b></a>
+                    <a href="Login.jsp"><b>LOGOUT</b></a>
                 </div>
             </div>
         </header>

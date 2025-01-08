@@ -193,4 +193,88 @@ public class UserDAO {
             return false;
         }
     }
+    
+    //FROM HAZIQ
+  //method for feching name and class homeworkSubmission.jsp
+    public User getUserByName(String userName) {
+        String query = "SELECT * FROM users WHERE name = ?";
+        User user = null;
+
+        try (Connection connection = getConnection();
+             PreparedStatement ps = connection.prepareStatement(query)) {
+            
+            ps.setString(1, userName);
+            System.out.println("Executing query: SELECT * FROM users WHERE name = '" + userName + "'");
+            
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                user = new User();
+                user.setName(rs.getString("name"));
+                user.setClassname(rs.getString("className"));
+                user.setEmail(rs.getString("email"));
+                user.setRole(rs.getString("role"));
+                
+                System.out.println("User found: " + user.getName());
+            } else {
+                System.out.println("No user found for userName: " + userName);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return user;
+    }
+
+    
+    
+    	//method for fetching classname
+    public String getUserClass(String name) {
+        String query = "SELECT className FROM users WHERE name = ?";
+        try (Connection connection = getConnection();
+             PreparedStatement ps = connection.prepareStatement(query)) {
+            
+            ps.setString(1, name);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                return rs.getString("className");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null; // Return null if not found
+    }
+    
+ // Method to get the role of the user based on username and password
+    public String getUserRole(String name, String password) {
+        String sql = "SELECT role FROM users WHERE name = ? AND password = ?";
+        String role = null;
+
+        try {
+            // Establish connection using DriverManager
+            try (Connection connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
+                 PreparedStatement statement = connection.prepareStatement(sql)) {
+
+                // Set parameters for the SQL query
+                statement.setString(1, name);
+                statement.setString(2, password);
+
+                // Execute the query and process the result
+                try (ResultSet resultSet = statement.executeQuery()) {
+                    if (resultSet.next()) {
+                        role = resultSet.getString("role"); // Fetch the role from the result
+                    }
+                }
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return role;
+    }
+    
 }

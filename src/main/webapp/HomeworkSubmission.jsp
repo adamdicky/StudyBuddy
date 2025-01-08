@@ -157,15 +157,15 @@
         <header>
             <div class="navbar">
                 <div class="content1">
-                    <a href="teacherdashboardnew.html"><b>STUDYBUDDY</b></a>
+                    <a ><b>STUDYBUDDY</b></a>
                 </div>
     
                 <div class="content2">
-                    <a><b></b></a>
+                	<a>Welcome back, Student<b></b></a>
                 </div>
     
                 <div class="content3">
-                    <a><b>LOGOUT</b></a>
+                    <a href="login.jsp"><b>LOGOUT</b></a>
                 </div>
             </div>
         </header>
@@ -176,22 +176,22 @@
                     ADD SUBMISSION 
                 </h1>
                 
-                <div class="greybox">
-                    <div class="submissionadd">
-                        <div class="hw">
-                           
-                            <input class="textbox" type="text" id="hw" name="hw">
-                        </div>                 
-                        
-                    </div>
-                    
-                </div>
+				  <div class="greybox">
+				    <div class="submissionadd">
+				        <div class="hw">
+						<form action="submitHomework" method="post">
+						    <input class="textbox" id="submission" name="submission" rows="5" cols="40" required></textarea><br>
+						    <div class="confirmbutton">
+						        <center>
+						            <button type="submit" class="confirm-btn">CONFIRM</button>
+						        </center>
+						    </div>
+						</form>
+				        </div>
+				    </div>
+				</div>
 
-                <div class="confirmbutton">
-                    <center>
-                        <button class="confirm-btn">CONFIRM</button>
-                    </center>
-                </div>
+                
             </div>
         </div>
     </body>

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -97,6 +97,9 @@
         .homework-detail {
             color: rgb(51, 132, 252);
             font-family: 'Anek Bangla';
+            
+            font-weight: bold;
+            font-size:15px;
         }
 
         .homework-subject, .homework-class, .view-btn {
@@ -185,7 +188,7 @@
         }
 
         /* Subject card colors */
-        .Math { background: #ff7043; }
+        .Additional-Mathematics { background: #ff7043; }
         .Chemistry { background: #29b6f6; }
         .English { background: #66bb6a; }
         .Physics { background: #ab47bc; }
@@ -212,58 +215,69 @@
     <header>
         <div class="navbar">
             <div class="content1">
-                <a href="teacherdashboardnew.html"><b>STUDYBUDDY</b></a>
+                <a href="${pageContext.request.contextPath}/homepage"><b>STUDYBUDDY</b></a>
             </div>
 
             <div class="content2">
-                <a>Welcome back, Hadi Syapik<b></b></a>
+                <a>Welcome back, ${name}<b></b></a>
             </div>
 
             <div class="content3">
-                <a><b>LOGOUT</b></a>
+              <a href="Login.jsp"><b>LOGOUT</b></a>
             </div>
         </div>
-   
-    
-    
-    
-    <div class="main-container">
-    
-        <div class="bodycontent">
-            <h1 class="homework-title">HOMEWORKS</h1>
-            <div class="greybox">
-                <div class="homework-item">
-                    <div class="homework-detail"><a>ACTIVITY BOOK PAGE 12 - 14</a></div>
-                    <div></div>
-                    <div class="homework-subject"><a>ADDITIONAL MATHEMATICS</a></div>
-                </div>
-               <div class="homework-item">
-                        <div class="homework-detail"><a>ACTIVITY BOOK PAGE 12 - 14</a></div>
-                        <div></div>
-                        <div class="homework-subject"><a>ADDITIONAL MATHETMATICS</a></div>  
-                        <div class="homework-action"></div>
-                    </div>
+    </header>
+  
+      
+            
+                
+       
+                
                     
-                    <div class="homework-item">
-                        <div class="homework-detail"><a>ACTIVITY BOOK PAGE 12 - 14</a></div>
-                   		<div></div>
-                        <div class="homework-subject"><a>ADDITIONAL MATHETMATICS</a></div>
-                        <div class="homework-action"></div>
+     <div class="homework-container">
+        <div class="bodycontent">
+            <div class="greybox">
+              
+                 <!-- Loop through homeworks passed from controller --> 
+             
+                	<c:forEach var="homework" items="${homeworks}" >
+	                	<div class="homework-item">
+	                        <div class="homework-detail"><a>${homework.details}</a></div>
+	                        <div> </div>
+	                        <div></div>
+	                       	
+	                        <div class="homework-subject"><a>${homework.homework}</a></div>
+	                      	
+                        
+	                           
+	                    </div> 
+	                 </c:forEach>
+	                
+           
             </div>
         </div>
-    </div>
-    <section class="subjects-grid">
-        <c:set var="subjects" value="${subjects != null ? subjects : ['Math', 'Chemistry', 'English', 'Physics']}" />
-        <c:forEach items="${subjects}" var="subject">
-            <div class="subject-card ${subject}">
+        
+         <!-- Subjects Section (Dynamic List of Subjects)--> 
+<section class="subjects-grid">
+
+    <c:set var="subjects" value="${subjects}" />
+    <c:forEach items="${subjects}" var="subject">
+        <div class="subject-container">
+        
+            <div class="subject-card ${subject.replace(' ', '-')}">
                 <h3>${subject}</h3>
-                <a href="homework-${subject.toLowerCase()}.jsp">
+                <!-- Update the href to point to the filterBySubject controller with the subject as a parameter -->
+                <a href="${pageContext.request.contextPath}/filterBySubject?subject=${subject}">
+                
                     <button class="view-homework-btn">View All Homework</button>
                 </a>
             </div>
-        </c:forEach>
-    </section>
-</div>
-</body>
+        </div>
+    </c:forEach>
+</section>
+        
+    </div>     
+   
+
 </body>
 </html>

@@ -164,7 +164,7 @@
                 </div>
 
                 <div class="content3">
-                    <a><b>LOGOUT</b></a>
+                    <a href="Login.jsp"><b>LOGOUT</b></a>
                 </div>
             </div>
         </header>

@@ -43,8 +43,9 @@ public class HomeworkDAO {
 	                homework.setDetails(rs.getString("details"));
 	                homework.setClassname(rs.getString("classname"));
 	                homeworks.add(homework);
-	                
 	            }
+	            
+	         
 	        } catch (SQLException e) {
 	            e.printStackTrace();
 	        }
@@ -94,6 +95,24 @@ public class HomeworkDAO {
 		 
 		 return false;
 	 }
+	 
+	 public String getHomeworkDetailsBySubject(String subjectName) {
+	        String query = "SELECT details FROM homeworks WHERE homework = ?";
+	        try (Connection connection = getConnection();
+	             PreparedStatement ps = connection.prepareStatement(query)) {
+
+	            ps.setString(1, subjectName);
+	            try (ResultSet rs = ps.executeQuery()) {
+	                if (rs.next()) {
+	                    return rs.getString("details");
+	                }
+	            }
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+	        return null; // Return null if no details found
+	    }
+	 
 	 
 	 //Method to update homework to database
 	 public boolean updateHomework(HomeworkModel original, HomeworkModel updated) {
