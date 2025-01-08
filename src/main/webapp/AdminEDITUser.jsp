@@ -173,7 +173,7 @@
         
 <body>
     <div class="box">
-        <a href="admin.jsp" class="close-button">&times;</a>
+        <a href="Admin.jsp" class="close-button">&times;</a>
         <h1>Edit User</h1>
         <form class="form-btn" action="edituser" method="POST">
     <div class="form-grid">

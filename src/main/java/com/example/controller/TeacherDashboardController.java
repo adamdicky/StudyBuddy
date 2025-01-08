@@ -47,13 +47,13 @@ public class TeacherDashboardController {
 		
 		@RequestMapping("/TeacherDashboard")
 		public String TeacherDashboard(HttpSession session, Model model) {
-			@SuppressWarnings("unchecked") //suppress warning of cannot guarantee the cast is safe
-			List<HomeworkModel> homeworkList = (List<HomeworkModel>) session.getAttribute("homeworkList"); //retrieve cart attb from user session
-			if (homeworkList == null) {
-				homeworkList = new ArrayList<>(); //initialize empty arraylist to start a new shopping cart session
-			}
-			
-			return "TeacherDashboard";
+		    // Fetch all homeworks from database
+		    List<HomeworkModel> homeworkList = homeworkDAO.getAllHomework();
+		    
+		    // Set the homework list in the session
+		    session.setAttribute("homeworkList", homeworkList);
+		    
+		    return "TeacherDashboard";
 		}
 		
 		

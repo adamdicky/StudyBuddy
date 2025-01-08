@@ -30,7 +30,26 @@ public class HomeworkDAO {
 	 }
 	 
 	 //Method to fetch all available homeworks data in database
-	 ////////
+	 public List<HomeworkModel> getAllHomework() {
+	        List<HomeworkModel> homeworks = new ArrayList<>();
+	        String query = "SELECT * FROM homeworks";
+	        try (Connection connection = getConnection();
+	             PreparedStatement ps = connection.prepareStatement(query);
+	             ResultSet rs = ps.executeQuery()) {
+	            while (rs.next()) {
+	                HomeworkModel homework = new HomeworkModel();
+	                homework.setHomework(rs.getString("homework"));
+	                homework.setDeadline(rs.getString("deadline"));
+	                homework.setDetails(rs.getString("details"));
+	                homework.setClassname(rs.getString("classname"));
+	                homeworks.add(homework);
+	                
+	            }
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        }
+	        return homeworks;
+	    }
 	 
 	 //Method add homework to database
 	 public boolean addHomework(HomeworkModel homework) {

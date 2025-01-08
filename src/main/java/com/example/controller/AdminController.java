@@ -16,7 +16,7 @@ public class AdminController {
     @RequestMapping("/adduser")
     public String getUser(Model model) {
         model.addAttribute("user", new User()); // Add an empty User object to bind the form data
-        return "adduser";  // Returns the view "adduser.jsp"
+        return "AdminADDUser";  // Returns the view "adduser.jsp"
     }
 
     @RequestMapping(value = "/saveUser", method = RequestMethod.POST)

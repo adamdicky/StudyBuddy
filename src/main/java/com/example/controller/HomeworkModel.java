@@ -7,6 +7,8 @@ public class HomeworkModel {
 	private String details;
 	private String classname;
 	
+	 public HomeworkModel() {}
+	
 	public HomeworkModel(String hw, String dl, String dt, String cl) {
 		this.homework=hw;
 		this.deadline=dl;

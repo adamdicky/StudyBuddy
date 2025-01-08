@@ -232,9 +232,9 @@
 	                        <div class="username-detail"><a>${user.role}</a></div>
 	                        
 	                        <div class="admin-action">
-	                           <a href="deleteuser.jsp?name=${user.name}&password=${user.password}&email=${user.email}&role=${user.role}" 
+	                           <a href="AdminDELETEUser.jsp?name=${user.name}&password=${user.password}&email=${user.email}&role=${user.role}" 
    									class="delete-btn"><b>-</b></a>	                        	                                         
-	                           <a href="edituser.jsp?id=&name=${user.name}&password=${user.password}&email=${user.email}&role=${user.role}" 
+	                           <a href="AdminEDITUser.jsp?id=&name=${user.name}&password=${user.password}&email=${user.email}&role=${user.role}" 
 	                           		class="edit-btn">/</a>                      
 	                        </div>       
 	                    </div> 
