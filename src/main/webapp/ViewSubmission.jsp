@@ -202,27 +202,20 @@
                 </h1>
                 
                 <div class="greybox">
-                	
-                	 <div class="activity-item">
-                        <div class="student-name"><a>MUHAMMAD ALI</a></div>
-                        <div class="student-class"><a>5 AMANAH</a></div>
-                       
-                        <div class="submission-action">                                                        
-                            <div class="submitted-btn"><a>SUBMITTED</a></div>
-                        </div>
-                        <button class="viewgrade-btn">60/100</button>
-                    </div>
-                    
-                    <div class="activity-item">
-                        <div class="student-name"><a>WAN AKIF</a></div>
-                        <div class="student-class"><a>5 AMANAH</a></div>
-                       
-                        <div class="submission-action">                                                        
-                            <div class="notsubmitted-btn"><a>NOT SUBMITTED</a></div>
-                        </div>
-                        <button class="viewgrade-btn">NOT GRADE</button>
-                    </div>
-            
+                	<c:forEach var="student" items="${students}">
+				        <div class="activity-item">
+				            <div class="student-name"><a>${student.name}</a></div>
+				            <div class="student-class"><a>${student.classname}</a></div>
+				            <div class="submission-action">                                                        
+				                <div class="notsubmitted-btn"><a>NOT SUBMITTED</a></div>
+				            </div>
+				            <button class="viewgrade-btn">NOT GRADED</button>
+				        </div>
+				    </c:forEach>
+    
+			    <c:if test="${empty students}">
+			        <p style="font-family: 'Anek Bangla';">No students found in this class.</p>
+			    </c:if>
                 </div>
             </div>
         </div>

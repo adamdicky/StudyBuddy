@@ -122,5 +122,29 @@ public class UserDAO {
         }
     }
     
-
+    /************/
+    
+    public List<User> getStudentsByClass(String className) {
+        List<User> students = new ArrayList<>();
+        String query = "SELECT * FROM users WHERE className = ? AND role = 'Student'";
+        
+        try (Connection connection = getConnection();
+             PreparedStatement ps = connection.prepareStatement(query)) {
+            
+            ps.setString(1, className);
+            ResultSet rs = ps.executeQuery();
+            
+            while (rs.next()) {
+                User student = new User();
+                student.setName(rs.getString("name"));
+                student.setClassname(rs.getString("className"));
+                student.setEmail(rs.getString("email"));
+                
+                students.add(student);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return students;
+    }
 }

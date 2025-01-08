@@ -5,6 +5,7 @@ public class User {
 	    private String password;
 	    private String email;
 	    private String role;
+	    private String classname;
 	    
 
 	    // Default Constructor
@@ -16,6 +17,14 @@ public class User {
 	        this.password = password;
 	        this.email = email;
 	        this.role = role;
+	    }
+	    
+	    public User(String name, String password, String email, String role, String classname) {
+	        this.name = name;
+	        this.password = password;
+	        this.email = email;
+	        this.role = role;
+	        this.classname = classname;
 	    }
 
 	    // Getter and Setter methods
@@ -30,6 +39,9 @@ public class User {
 
 	    public String getRole() {return role;}
 	    public void setRole(String role) {this.role = role;}
+	    
+	    public String getClassname() {return classname;}
+	    public void setClassname(String classname) {this.classname = classname;} 
 	    
 	  
 	}

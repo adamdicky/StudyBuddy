@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class TeacherDashboardController {
 	
 		private HomeworkDAO homeworkDAO = new HomeworkDAO(); //DAO object
+		private UserDAO userDAO = new UserDAO(); //DAO object
 
 		@RequestMapping("/addhomework")
 		//correspond to addhomework in TeacherDashboardADD.jsp
@@ -45,7 +46,7 @@ public class TeacherDashboardController {
 			return "redirect:/TeacherDashboard.jsp";
 		}
 		
-		@RequestMapping("/TeacherDashboard")
+		@RequestMapping({"/TeacherDashboard", "/TeacherDashboard.jsp"})
 		public String TeacherDashboard(HttpSession session, Model model) {
 		    // Fetch all homeworks from database
 		    List<HomeworkModel> homeworkList = homeworkDAO.getAllHomework();
@@ -130,9 +131,17 @@ public class TeacherDashboardController {
 		
 		
 		@RequestMapping("/opensubmission")
-		public String opensubmission() {
+		public String opensubmission(@RequestParam("hw") String homework,  @RequestParam("dl") String deadline,  @RequestParam("dt") String details, @RequestParam("cl") String classname, Model model) {
+			List<User> students = userDAO.getStudentsByClass(classname);
+			
+			model.addAttribute("homeworkDetails", details);
+			model.addAttribute("homework", homework);
+			model.addAttribute("deadline", deadline);
+			model.addAttribute("classname", classname);
+			model.addAttribute("students", students);
+			
 			return "ViewSubmission";
-		}
+			}
 		
 		/*
 		@RequestMapping("/edithomework")
